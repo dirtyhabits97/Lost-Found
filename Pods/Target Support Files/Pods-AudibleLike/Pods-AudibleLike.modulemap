@@ -1,0 +1,6 @@
+framework module Pods_AudibleLike {
+  umbrella header "Pods-AudibleLike-umbrella.h"
+
+  export *
+  module * { export * }
+}
