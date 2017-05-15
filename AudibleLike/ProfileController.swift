@@ -45,6 +45,32 @@ class ProfileController: UITableViewController{
         static var count: Int { return email.rawValue + 1}
     }
     
+    //persona = {persona: "pepe"}
+    //persona["edad"] = []
+    //persona["edad"][0] =
+    
+    enum infoItem: Int {
+        case policia = 0, bomberos, ong
+        
+        var info: String {
+            switch self {
+            case .policia: return "105"
+            case .bomberos: return  "116"
+            case .ong: return "-"
+            }
+        }
+        
+        var title: String {
+            switch self {
+            case .policia: return "Policia: "
+            case .bomberos: return  "Bomberos: "
+            case .ong: return "ONG: "
+            }
+        }
+        
+        static var count: Int { return ong.rawValue + 1}
+    }
+    
     
     // MARK: - Interface Objects
     
@@ -86,16 +112,16 @@ extension ProfileController {
         case 0:
             return profileItem.count
         default:
-            return 1
+            return infoItem.count
         }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let section = indexPath.section
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! ProfileDetailCell
         switch section{
         case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! ProfileDetailCell
             let item = profileItem.init(rawValue: indexPath.row)
             cell.settingInfoLabel.text = item?.title
             cell.infoLabel.text = item?.getInfo(user: user)
@@ -106,9 +132,9 @@ extension ProfileController {
             return cell
         
         default:
-            let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! ProfileDetailCell
-            let item = profileItem.init(rawValue: indexPath.row)
+            let item = infoItem.init(rawValue: indexPath.row)
             cell.settingInfoLabel.text = item?.title
+            cell.infoLabel.text = item?.info
             return cell
         }
     }
@@ -120,7 +146,7 @@ extension ProfileController {
     }
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return section == 0 ? 80 : 0
+        return section == 0 ? 80 : 160
     }
 }
 

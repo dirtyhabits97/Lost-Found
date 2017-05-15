@@ -113,7 +113,7 @@ extension LoginController {
         }
         
         nextButton.snp.makeConstraints { (make) in
-            nextButtonTopConstraint = make.top.equalTo(skipButton).constraint
+            nextButtonTopConstraint = make.top.equalTo(view).offset(16).constraint
             make.right.equalTo(view)
             make.height.width.equalTo(skipButton)
         }

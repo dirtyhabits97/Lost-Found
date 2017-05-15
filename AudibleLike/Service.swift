@@ -46,7 +46,7 @@ struct Service {
                 print("It was empty")
                 return
             }
-            print("Categories got fetched")
+            print("Categories got fetched", categoryArray)
             completion(categoryArray)
         }) { (err) in
             print("Failed to fetch categories...", err)

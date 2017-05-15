@@ -71,6 +71,7 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         Service.sharedInstance.fetchCategories { (categories) in
             self.categories = categories
             print("Tamaño", categories.count)
+            self.collectionView?.reloadData()
         }
     }
 }

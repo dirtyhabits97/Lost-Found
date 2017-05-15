@@ -21,6 +21,7 @@ class Categories: JSONDecodable {
         var _lostCategories: [LostCategory] = []
         for (_,category) in json["categorias"] {
             let category = try LostCategory(json: category)
+            print(category.name)
             _lostCategories.append(category)
         }
         self.lostCategories = _lostCategories
