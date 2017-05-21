@@ -87,7 +87,7 @@ extension HomeController {
     func pushTableView<T>(customController: T) where T : UITableViewController{
         let searchTableViewController = customController as? SearchTableViewController
         searchTableViewController?.everyLostPeople = everyLostPeople ?? []
-        navigationController?.pushViewController(customController, animated: true)
+        navigationController?.pushViewController(searchTableViewController, animated: true)
     }
 }
 
