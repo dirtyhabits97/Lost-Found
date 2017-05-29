@@ -45,10 +45,6 @@ class ProfileController: UITableViewController{
         static var count: Int { return email.rawValue + 1}
     }
     
-    //persona = {persona: "pepe"}
-    //persona["edad"] = []
-    //persona["edad"][0] =
-    
     enum infoItem: Int {
         case policia = 0, bomberos, ong
         

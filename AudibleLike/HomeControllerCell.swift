@@ -36,6 +36,8 @@ class HomeControllerCell: UICollectionViewCell, UICollectionViewDelegate, UIColl
         return 28 + 6 + 6 + 2
     }
     
+    weak var lostPersonCellDelegate: LostPersonCellDelegate?
+    
     // MARK: - Interface Objects
     
     let categoryLabel: UILabel = {
@@ -122,5 +124,11 @@ extension HomeControllerCell {
         let lostPerson = lostArray[indexPath.item]
         cell.lostPerson = lostPerson
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        let cell = collectionView.cellForItem(at: indexPath) as! LostPersonCell
+        lostPersonCellDelegate?.showDetailFor(lostPerson: cell.lostPerson)
     }
 }

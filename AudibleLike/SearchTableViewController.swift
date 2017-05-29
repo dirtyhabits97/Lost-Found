@@ -13,7 +13,7 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate {
     // MARK: - Object Variables
     
     var everyLostPeople: [Lost]!
-    var filteredLostPeople:[Lost] = []
+    var filteredLostPeople: [Lost] = []
     var shouldShowSearchResults = false
     
     fileprivate let cellId = "cellId"
@@ -70,12 +70,21 @@ extension SearchTableViewController {
         cell.lostPerson = lostPerson
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        searchBar.endEditing(true)
+        let cell = tableView.cellForRow(at: indexPath) as! FindPersonCell
+        let detailViewController = DetailViewController()
+        detailViewController.lostPerson = cell.lostPerson
+        tableView.deselectRow(at: indexPath, animated: true)
+        navigationController?.pushViewController(detailViewController, animated: true)
+    }
 }
 
 
-// MARK: SearchBarDelegate Methods
+// MARK: - SearchBarDelegate Methods
 
-extension SearchTableViewController {
+extension SearchTableViewController {    
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         shouldShowSearchResults = true
@@ -102,13 +111,14 @@ extension SearchTableViewController {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         filteredLostPeople = everyLostPeople.filter({ (lost) -> Bool in
             let fullname = lost.firstname + " " + lost.lastname
+            print("Hola ", fullname)
             return ((fullname.lowercased().range(of: searchText.lowercased())) != nil)
         })
         if searchText != "" {
             shouldShowSearchResults = true
             tableView.reloadData()
         } else {
-            shouldShowSearchResults = false
+            shouldShowSearchResults = true
             tableView.reloadData()
         }
     }

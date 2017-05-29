@@ -6,6 +6,7 @@ target 'AudibleLike' do
   use_frameworks!
 
   # Pods for AudibleLike
+  pod 'MyExtensions', :path => '/Volumes/DATOS/Projects/MyExtensions'
   pod 'TRON', '~> 2.0.0'
   pod 'SnapKit', '~> 3.2.0'
   pod 'AlamofireImage', '~> 3.1'

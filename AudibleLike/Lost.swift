@@ -70,7 +70,7 @@ class Lost: JSONDecodable{
         self.lastname = json["apellido"].stringValue
         self.dni = json["dni"].stringValue
         self.age = json["age"].intValue
-        self.description = json["descrption"].stringValue
+        self.description = json["description"].stringValue
     }
     
 }

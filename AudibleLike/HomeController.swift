@@ -8,16 +8,19 @@
 
 import UIKit
 
-class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLayout, HomeDelegate {
+class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLayout, HomeDelegate, LostPersonCellDelegate{
     
     // MARK: - Object Variables
     
     var user: User!
-    var categories: [LostCategory] = [] {
+    var categories: [LostCategory]? {
         didSet {
+            guard let categories = categories, categories.count > 0 else { everyLostPeople = nil; return }
             var aux: [Lost] = []
             for category in categories {
-                aux += category.lostArray ?? []
+                if let lostArray = category.lostArray {
+                    aux += lostArray
+                }
             }
             everyLostPeople = aux
         }
@@ -58,22 +61,27 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     // MARK: - View Lifecycle
         
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad()        
+        navigationController?.navigationBar.tintColor = orangeColor
         collectionView?.backgroundColor = .white
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: profileButton)
         navigationItem.rightBarButtonItem = moreOptionsButton
         navigationItem.title = user.username
         collectionView?.register(HomeControllerCell.self, forCellWithReuseIdentifier: cellId)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+        
         Service.sharedInstance.fetchCategories { (categories) in
             self.categories = categories
-            print("Tamaño", categories.count)
             self.collectionView?.reloadData()
         }
     }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        Service.sharedInstance.fetchCategories { (categories) in
+//            self.categories = categories
+//            self.collectionView?.reloadData()
+//        }
+//    }
 }
 
 
@@ -85,9 +93,16 @@ extension HomeController {
     }
     
     func pushTableView<T>(customController: T) where T : UITableViewController{
-        let searchTableViewController = customController as? SearchTableViewController
-        searchTableViewController?.everyLostPeople = everyLostPeople ?? []
+        let searchTableViewController = customController as! SearchTableViewController
+        searchTableViewController.everyLostPeople = everyLostPeople ?? []
         navigationController?.pushViewController(searchTableViewController, animated: true)
+    }
+    
+    
+    func showDetailFor(lostPerson: Lost) {
+        let detailViewController = DetailViewController()
+        detailViewController.lostPerson = lostPerson
+        navigationController?.pushViewController(detailViewController, animated: true)
     }
 }
 
@@ -154,13 +169,15 @@ extension HomeController {
 
 extension HomeController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        guard let categories = categories else { return 0 }
         return categories.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! HomeControllerCell
-        let category = categories[indexPath.item]
+        let category = categories?[indexPath.item]
         cell.lostCategory = category
+        cell.lostPersonCellDelegate = self
         return cell
     }
 }

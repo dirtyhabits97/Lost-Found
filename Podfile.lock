@@ -2,6 +2,7 @@ PODS:
   - Alamofire (4.4.0)
   - AlamofireImage (3.2.0):
     - Alamofire (~> 4.1)
+  - MyExtensions (0.1.0)
   - SnapKit (3.2.0)
   - SwiftyJSON (3.1.4)
   - TRON (2.0.1):
@@ -16,16 +17,22 @@ PODS:
 
 DEPENDENCIES:
   - AlamofireImage (~> 3.1)
+  - MyExtensions (from `/Volumes/DATOS/Projects/MyExtensions`)
   - SnapKit (~> 3.2.0)
   - TRON (~> 2.0.0)
+
+EXTERNAL SOURCES:
+  MyExtensions:
+    :path: /Volumes/DATOS/Projects/MyExtensions
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
   AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
+  MyExtensions: 7d00a2268641f82ea138244861474ab6118bc9e2
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   TRON: 7b9adeb678fe0e25433d207f6a734aaf145fa9b5
 
-PODFILE CHECKSUM: e057b9e2627a35414a12eca5ad711c81f4a997ba
+PODFILE CHECKSUM: 568c4dee3091659b743b026670b11598ef945fc7
 
 COCOAPODS: 1.2.1
