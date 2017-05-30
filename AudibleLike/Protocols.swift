@@ -19,3 +19,7 @@ protocol HomeDelegate: class {
     func pushTableView<T: UITableViewController>(customController: T)
     func handleDismissToPushVC(completion: @escaping () -> ())
 }
+
+protocol LostPersonCellDelegate: class {
+    func showDetailFor(lostPerson: Lost)
+}

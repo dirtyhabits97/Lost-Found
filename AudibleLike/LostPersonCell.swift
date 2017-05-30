@@ -9,10 +9,6 @@
 import UIKit
 import SnapKit
 
-protocol LostPersonCellDelegate: class {
-    func showDetailFor(lostPerson: Lost)
-}
-
 class LostPersonCell: UICollectionViewCell {
     
     // MARK: - Object Variables

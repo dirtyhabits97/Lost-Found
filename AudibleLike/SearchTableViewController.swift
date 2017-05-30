@@ -111,7 +111,6 @@ extension SearchTableViewController {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         filteredLostPeople = everyLostPeople.filter({ (lost) -> Bool in
             let fullname = lost.firstname + " " + lost.lastname
-            print("Hola ", fullname)
             return ((fullname.lowercased().range(of: searchText.lowercased())) != nil)
         })
         if searchText != "" {

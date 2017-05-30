@@ -24,7 +24,7 @@ class DetailViewController: UIViewController {
             let attributedTextForAge = NSMutableAttributedString(string: "Edad: ", attributes: [NSForegroundColorAttributeName: UIColor(white: 0.8, alpha: 1), NSFontAttributeName: UIFont.boldSystemFont(ofSize: 16)])
             attributedTextForAge.append(NSAttributedString(string: "\(lostPerson.age)"))
             ageLabel.attributedText = attributedTextForAge
-            let attributedTextForDetail = NSMutableAttributedString(string: "Descripción: \n\n", attributes: [NSForegroundColorAttributeName: UIColor(white: 0.8, alpha: 1), NSFontAttributeName: UIFont.boldSystemFont(ofSize: 18)])
+            let attributedTextForDetail = NSMutableAttributedString(string: "Descripción: \n", attributes: [NSForegroundColorAttributeName: UIColor(white: 0.8, alpha: 1), NSFontAttributeName: UIFont.boldSystemFont(ofSize: 18)])
             attributedTextForDetail.append(NSAttributedString(string: lostPerson.description))
             detailLabel.attributedText = attributedTextForDetail
         }
@@ -32,6 +32,8 @@ class DetailViewController: UIViewController {
     
     
     // MARK: - Interface Objects
+    
+    let whiteView = UIView()
     
     let photoImageView: UIImageView = {
         let iv = UIImageView()
@@ -73,7 +75,7 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         view.backgroundColor = .white
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: nil, action: nil)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(handleClueView))
         navigationItem.title = "Detalle"
         super.viewDidLoad()
         setupViews()
@@ -93,10 +95,15 @@ class DetailViewController: UIViewController {
             make.height.equalTo(view.frame.height*(4/7))
         }
         detailLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(view).offset(14)
-            make.right.equalTo(view).offset(-14)
+            make.left.equalTo(view).offset(24)
+            make.right.equalTo(view).offset(-24)
             make.top.equalTo(stackView.snp.bottom).offset(8)
             make.bottom.equalTo(view)
         }
+    }
+    
+    func handleClueView() {
+        let clueViewController = ClueViewController()
+        navigationController?.pushViewController(clueViewController, animated: true)
     }
 }
