@@ -198,19 +198,19 @@ extension LoginCell {
     func handleRegister() {
         if let username = emailTextField.text, let password = passwordTextField.text, let name = nameTextField.text{
             guard !name.isEmpty else {
-                let alert = UIAlertController(title: "Error", message: "Name can't be left blank", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Aviso", message: "El campo Nombre no puede estar vacío", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
                 delegate?.loadAlert(alert)
                 return
             }
             guard !username.isEmpty else {
-                let alert = UIAlertController(title: "Error", message: "Username can't be left blank", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Avio", message: "El campo Usuario no puede estar vacío", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
                 delegate?.loadAlert(alert)
                 return
             }
             guard !password.isEmpty else {
-                let alert = UIAlertController(title: "Error", message: "Password can't be left blank", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Aviso", message: "El campo Contraseña no puede estar vacío", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
                 delegate?.loadAlert(alert)
                 return
@@ -222,13 +222,13 @@ extension LoginCell {
     func handleLogin() {
         if let username = emailTextField.text, let password = passwordTextField.text {
             guard !username.isEmpty else {
-                let alert = UIAlertController(title: "Error", message: "Please enter a valid User", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Aviso", message: "Por favor, ingrese un Usuario válido", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
                 delegate?.loadAlert(alert)
                 return
             }
             guard !password.isEmpty else {
-                let alert = UIAlertController(title: "Error", message: "Please enter a password", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Aviso", message: "Por favor, ingrese una Contraseña válida", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
                 delegate?.loadAlert(alert)
                 return

@@ -19,9 +19,9 @@ struct Service {
     func fetchRegisterResult(_ name: String, _ username:String, _ password:String, completion: @escaping (Bool)->()) {
         let req:APIRequest<Credential, JSONError> = tron.request("/register")
         req.parameters = ["name" : name, "username" : username, "password" : password]
-        req.perform(withSuccess: { (home) in
+        req.perform(withSuccess: { (response) in
             print("Shit got fetched homie")
-            completion(home.result)
+            completion(response.result)
         }) { (err) in
             print("Failed to register user...", err)
         }
@@ -51,6 +51,18 @@ struct Service {
         }) { (err) in
             print("Failed to fetch categories...", err)
         }
+    }
+    
+    func sendClueFor(_ idLostPerson: String, from idUser: String, _ subject: String, _ detail: String, completion: @escaping (Bool)->()) {
+        let req:APIRequest<Credential, JSONError> = tron.request("/clue")
+        req.parameters = ["idUsuario":idUser, "idPerdido":idLostPerson, "asunto":subject, "descripcion":detail]
+        req.perform(withSuccess: { (response) in
+            print("Clue was sent succesfuly")
+            completion(response.result)
+        }) { (err) in
+            print("Failed to send clue...", err)
+        }
+        
     }
     
     class JSONError: JSONDecodable {

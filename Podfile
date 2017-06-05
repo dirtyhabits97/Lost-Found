@@ -12,3 +12,11 @@ target 'AudibleLike' do
   pod 'AlamofireImage', '~> 3.1'
 
 end
+
+target 'AudibleLikeTests' do
+    
+    use_frameworks!
+    
+    # Pods for AudibleLikeTests
+    pod 'TRON', '~> 2.0.0'
+end

@@ -12,17 +12,19 @@ import SwiftyJSON
 
 class User: NSObject, NSCoding, JSONDecodable {
     
-    let name: String
-    let username: String
+    let name: String?
+    let username: String?
     
-    init(name:String, username:String) {
-        self.name = name
-        self.username = username
+    init(name:String?, username:String?) {
+        self.name = name == "" ? nil : name
+        self.username = name == "" ? nil : username
     }
     
     required init(json: JSON) throws {
-        self.name = json["nombre"].stringValue
-        self.username = json["usuario"].stringValue
+        let name = json["nombre"].stringValue
+        let username = json["usuario"].stringValue
+        self.name = name == "" ? nil : name
+        self.username = username == "" ? nil : username
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
@@ -43,6 +45,5 @@ class Credential: JSONDecodable{
     
     required init(json: JSON) throws {
         self.result = json["resultado"].boolValue
-        print(result)
     }
 }

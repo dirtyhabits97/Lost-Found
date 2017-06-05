@@ -35,10 +35,10 @@ class ProfileController: UITableViewController{
         func getInfo(user: User) -> String{
             switch self {
             case .dni: return ""
-            case .name: return user.name
-            case .username: return user.username
+            case .name: return (user.name == nil) ? "" : user.name!
+            case .username: return user.username == nil ? "" : user.username!
             case .age: return ""
-            case .email: return user.username + "@gmail.com"
+            case .email: return user.username == nil ? "" : user.username!
             }
         }
         

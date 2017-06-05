@@ -160,15 +160,15 @@ extension LoginController {
     
     func finishLoggingIn(_ username: String, _ password: String) {
         Service.sharedInstance.fetchLogged(username, password) { (user) in
-            if user.username.isEmpty {
-                let alert = UIAlertController(title: "Error", message: "User doesn't exist", preferredStyle: .alert)
+            if let username = user.username, username.isEmpty {
+                let alert = UIAlertController(title: "Error", message: "El usuario no existe", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
                 return
             }
             
             let rootViewController = UIApplication.shared.keyWindow?.rootViewController
-            //downcast that rvc to a my mnc
+            //downcast that Root ViewController to a my HomeNavigationController
             guard let homeNavController = rootViewController as? HomeNavigationController else {
                 print("Not a Home Navigation Controller")
                 return
@@ -190,7 +190,7 @@ extension LoginController {
             print("The result was:" , reslt)
             switch reslt{
             case false:
-                let alert = UIAlertController(title: "Error", message: "An error was produced", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Error", message: "Se ha producido un error", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
                 return
@@ -281,7 +281,6 @@ extension LoginController {
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
             
             self.view.frame = CGRect(x: 0, y: -50, width: self.view.frame.width, height: self.view.frame.height)
-            
         }, completion: nil)
     }
     
@@ -289,7 +288,6 @@ extension LoginController {
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
             
             self.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
-            
         }, completion: nil)
     }
 }

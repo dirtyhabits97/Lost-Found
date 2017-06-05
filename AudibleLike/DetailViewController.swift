@@ -32,9 +32,7 @@ class DetailViewController: UIViewController {
     
     
     // MARK: - Interface Objects
-    
-    let whiteView = UIView()
-    
+        
     let photoImageView: UIImageView = {
         let iv = UIImageView()
         iv.backgroundColor = orangeColor
@@ -104,6 +102,7 @@ class DetailViewController: UIViewController {
     
     func handleClueView() {
         let clueViewController = ClueViewController()
+        clueViewController.lostPerson = lostPerson
         navigationController?.pushViewController(clueViewController, animated: true)
     }
 }

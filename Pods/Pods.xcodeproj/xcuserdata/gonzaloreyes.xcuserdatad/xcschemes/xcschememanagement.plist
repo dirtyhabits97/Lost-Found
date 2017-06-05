@@ -24,6 +24,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-AudibleLikeTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SnapKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,7 +47,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>2DD2327FEFF0BE44C40ADDA560F3D511</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>4ACB096143B97F055A721C5B666C0B37</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>74392F12DF7A4BC0AA5E66656577D175</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -58,11 +73,6 @@
 			<true/>
 		</dict>
 		<key>9EFE4C70245EE2857D336B8B9FA4E825</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A3A6CF5F0273AA2C5FC28969AB483377</key>
 		<dict>
 			<key>primary</key>
 			<true/>

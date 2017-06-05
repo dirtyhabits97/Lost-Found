@@ -9,13 +9,9 @@
 import UIKit
 import SnapKit
 
-class ClueViewController: UIViewController, UITextFieldDelegate {
+class ClueViewController: UIViewController, UITextViewDelegate {
     
-    var lostPerson: Lost! {
-        didSet {
-            
-        }
-    }
+    var lostPerson: Lost!
     
     let dividerLineView: UIView = {
         let view = UIView()
@@ -32,12 +28,14 @@ class ClueViewController: UIViewController, UITextFieldDelegate {
         return textfield
     }()
     
-    let clueTextView: UITextView = {
+    lazy var clueTextView: UITextView = {
         let tv = UITextView()
+        tv.delegate = self
         tv.autocorrectionType = .no
         tv.spellCheckingType = .no
-        tv.text = "Prueba"
-        tv.font = .systemFont(ofSize: 14)
+        tv.text = "Pista"
+        tv.textColor = UIColor(white: 0.7, alpha: 1)
+        tv.font = .systemFont(ofSize: 18)
         return tv
     }()
     
@@ -48,7 +46,7 @@ class ClueViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        clueTextView.selectedTextRange = clueTextView.textRange(from: clueTextView.beginningOfDocument, to: clueTextView.beginningOfDocument)
         view.backgroundColor = .white
         navigationController?.navigationBar.isTranslucent = false
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancelar", style: .plain, target: self, action: #selector(handleDismissClue))
@@ -72,14 +70,21 @@ class ClueViewController: UIViewController, UITextFieldDelegate {
     }
     
     func handleSendClue() {
-        let alert = UIAlertController(title: "Pista Enviada", message: nil, preferredStyle: .alert)
-        present(alert, animated: true) { 
-            self.dismiss(animated: true, completion: { 
-                self.navigationController?.popViewController(animated: true)
-            })
-        }        
+        guard let subject = subjectTextField.text, subject != "" else { return }
+        guard let detail = clueTextView.text, (detail.characters.count > 0) && (detail.characters.count < 101) && (detail != "Prueba") else { return }
+        guard let user = UserDefaults.standard.unarchiveUser().username else { return }
+        let lostPerson = self.lostPerson.dni
+        
+        Service.sharedInstance.sendClueFor(lostPerson, from: user, subject, detail) { (result) in
+            let title = result == false ? "Se produjo un error al enviar la pista" : "Pista Enviada"
+            let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+            self.present(alert, animated: true) {
+                self.dismiss(animated: true, completion: {
+                    self.navigationController?.popViewController(animated: true)
+                })
+            }            
+        }
     }
-    
     
     // MARK: - Setup Views
     
@@ -107,6 +112,31 @@ class ClueViewController: UIViewController, UITextFieldDelegate {
             make.top.equalTo(dividerLineView.snp.bottom)
             make.left.right.equalTo(subjectTextField)
             make.bottom.equalTo(view)
+        }
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        let placeholderColor = UIColor(white: 0.7, alpha: 1)
+        let currentText = textView.text as NSString
+        let updatedText = currentText.replacingCharacters(in: range, with: text)
+        
+        if updatedText.isEmpty {
+            textView.text = "Pista"
+            textView.textColor = placeholderColor
+            textView.selectedTextRange = textView.textRange(from: textView.beginningOfDocument, to: textView.beginningOfDocument)
+            return false
+        } else if (textView.textColor == placeholderColor) && !(text.isEmpty) {
+            textView.text = ""
+            textView.textColor = .black
+        }
+        return true
+    }
+    
+    func textViewDidChangeSelection(_ textView: UITextView) {
+        if self.view.window != nil {
+            if textView.textColor == UIColor(white: 0.7, alpha: 1) {
+                textView.selectedTextRange = textView.textRange(from: textView.beginningOfDocument, to: textView.beginningOfDocument)
+            }
         }
     }
 }
