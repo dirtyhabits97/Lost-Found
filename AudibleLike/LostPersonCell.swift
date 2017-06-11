@@ -16,6 +16,7 @@ class LostPersonCell: UICollectionViewCell {
     var lostPerson: Lost! {
         didSet {
             nameLabel.text = lostPerson.lastname + ", " + lostPerson.firstname
+            photoImage.image = lostPerson.image
         }
     }
     

@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-AudibleLikeTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SnapKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -43,6 +48,11 @@
 			<true/>
 		</dict>
 		<key>54A7804D9912EE46997A7B12A8E593A4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>74392F12DF7A4BC0AA5E66656577D175</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -8,7 +8,6 @@
 
 import UIKit
 import SnapKit
-import MyExtensions
 
 class LoginCell: UICollectionViewCell, UITextFieldDelegate {
     
@@ -28,8 +27,8 @@ class LoginCell: UICollectionViewCell, UITextFieldDelegate {
         return iv
     }()
     
-    lazy var emailTextField: UIPaddedTextField = {
-        let textField = UIPaddedTextField()
+    lazy var emailTextField: PaddedTextField = {
+        let textField = PaddedTextField()
         textField.delegate = self
         textField.placeholder = "Enter email"
         textField.keyboardType = .emailAddress
@@ -40,8 +39,8 @@ class LoginCell: UICollectionViewCell, UITextFieldDelegate {
         return textField
     }()
     
-    lazy var passwordTextField: UIPaddedTextField = {
-        let textField = UIPaddedTextField()
+    lazy var passwordTextField: PaddedTextField = {
+        let textField = PaddedTextField()
         textField.placeholder = "Enter password"
         textField.delegate = self
         textField.isSecureTextEntry = true
@@ -52,8 +51,8 @@ class LoginCell: UICollectionViewCell, UITextFieldDelegate {
         return textField
     }()
     
-    lazy var nameTextField: UIPaddedTextField = {
-        let textField = UIPaddedTextField()
+    lazy var nameTextField: PaddedTextField = {
+        let textField = PaddedTextField()
         textField.isHidden = true
         textField.delegate = self
         textField.placeholder = "Enter your name"

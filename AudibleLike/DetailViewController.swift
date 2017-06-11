@@ -27,6 +27,8 @@ class DetailViewController: UIViewController {
             let attributedTextForDetail = NSMutableAttributedString(string: "Descripción: \n", attributes: [NSForegroundColorAttributeName: UIColor(white: 0.8, alpha: 1), NSFontAttributeName: UIFont.boldSystemFont(ofSize: 18)])
             attributedTextForDetail.append(NSAttributedString(string: lostPerson.description))
             detailLabel.attributedText = attributedTextForDetail
+            
+            photoImageView.image = lostPerson.image
         }
     }
     

@@ -19,7 +19,6 @@
 		7C7103791EC3EACD0040CA28 /* FindPersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7103781EC3EACD0040CA28 /* FindPersonCell.swift */; };
 		7C71037B1EC4DCC40040CA28 /* BaseCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C71037A1EC4DCC40040CA28 /* BaseCells.swift */; };
 		7C71037D1EC4DD590040CA28 /* ProfileDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C71037C1EC4DD590040CA28 /* ProfileDetailCell.swift */; };
-		7C8198851ED7401C00F32812 /* MyExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C8198841ED7401C00F32812 /* MyExtensions.framework */; };
 		7C9BD70D1EC13060003242CA /* TextField+helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9BD70C1EC13060003242CA /* TextField+helpers.swift */; };
 		7C9BD70F1EC13D1D003242CA /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9BD70E1EC13D1D003242CA /* Protocols.swift */; };
 		7C9BD7111EC146E6003242CA /* Lost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9BD7101EC146E6003242CA /* Lost.swift */; };
@@ -103,7 +102,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C8198851ED7401C00F32812 /* MyExtensions.framework in Frameworks */,
 				F58621C7C1EFE6A91470D53D /* Pods_AudibleLike.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

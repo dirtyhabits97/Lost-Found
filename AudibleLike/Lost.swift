@@ -56,13 +56,21 @@ class Lost: JSONDecodable{
     let dni: String
     let age: Int
     let description: String
+    let imageRaw: String
+    var image: UIImage?
 
-    init(firstname: String, lastname: String, dni: String, age: Int, description: String) {
+    init(firstname: String, lastname: String, dni: String, age: Int, description: String, imageRaw: String = "") {
         self.firstname = firstname
         self.lastname = lastname
         self.dni = dni
         self.age = age
         self.description = description
+        self.imageRaw = imageRaw
+        if let imageData = Data(base64Encoded: self.imageRaw) {
+            if let image = UIImage(data: imageData) {
+                self.image = image
+            }
+        }
     }
     
     required init(json: JSON) throws {
@@ -71,6 +79,15 @@ class Lost: JSONDecodable{
         self.dni = json["dni"].stringValue
         self.age = json["age"].intValue
         self.description = json["description"].stringValue
+        self.imageRaw = json["imagen"].stringValue
+        print("Antes de entrar al primer if")
+        if let imageData = Data(base64Encoded: self.imageRaw, options: .init(rawValue: 0)) {
+            print("Entró al primer if: ", imageData)
+            if let image = UIImage(data: imageData) {
+                print("Image: ", image)
+                self.image = image
+            }
+        }
     }
     
 }
