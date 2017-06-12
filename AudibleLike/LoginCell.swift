@@ -30,7 +30,7 @@ class LoginCell: UICollectionViewCell, UITextFieldDelegate {
     lazy var emailTextField: PaddedTextField = {
         let textField = PaddedTextField()
         textField.delegate = self
-        textField.placeholder = "Enter email"
+        textField.placeholder = "Usuario"
         textField.keyboardType = .emailAddress
         textField.layer.borderColor = UIColor.lightGray.cgColor
         textField.layer.borderWidth = 1
@@ -41,7 +41,7 @@ class LoginCell: UICollectionViewCell, UITextFieldDelegate {
     
     lazy var passwordTextField: PaddedTextField = {
         let textField = PaddedTextField()
-        textField.placeholder = "Enter password"
+        textField.placeholder = "Contraseña"
         textField.delegate = self
         textField.isSecureTextEntry = true
         textField.layer.borderColor = UIColor.lightGray.cgColor
@@ -55,7 +55,7 @@ class LoginCell: UICollectionViewCell, UITextFieldDelegate {
         let textField = PaddedTextField()
         textField.isHidden = true
         textField.delegate = self
-        textField.placeholder = "Enter your name"
+        textField.placeholder = "Nombre"
         textField.layer.borderColor = UIColor.lightGray.cgColor
         textField.layer.borderWidth = 1
         textField.returnKeyType = .done
@@ -74,7 +74,7 @@ class LoginCell: UICollectionViewCell, UITextFieldDelegate {
     }()
     
     lazy var loginRegisterSegmentedControl: UISegmentedControl = {
-        let sc = UISegmentedControl(items: ["Log in", "Register"])
+        let sc = UISegmentedControl(items: ["Log in", "Registrarse"])
         sc.selectedSegmentIndex = 0
         sc.translatesAutoresizingMaskIntoConstraints = false
         sc.backgroundColor = .white
