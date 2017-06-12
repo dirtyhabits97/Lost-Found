@@ -56,17 +56,18 @@ class Lost: JSONDecodable{
     let dni: String
     let age: Int
     let description: String
-    let imageRaw: String
+    let base64ImageStr: String
     var image: UIImage?
 
-    init(firstname: String, lastname: String, dni: String, age: Int, description: String, imageRaw: String = "") {
+    init(firstname: String, lastname: String, dni: String, age: Int, description: String, base64ImageStr: String = "") {
         self.firstname = firstname
         self.lastname = lastname
         self.dni = dni
         self.age = age
         self.description = description
-        self.imageRaw = imageRaw
-        if let imageData = Data(base64Encoded: self.imageRaw) {
+        self.base64ImageStr = base64ImageStr
+        let str = self.base64ImageStr.replacingOccurrences(of: "data:image/jpeg;base64,", with: "")
+        if let imageData: Data = Data(base64Encoded: str, options: .ignoreUnknownCharacters) {
             if let image = UIImage(data: imageData) {
                 self.image = image
             }
@@ -79,15 +80,13 @@ class Lost: JSONDecodable{
         self.dni = json["dni"].stringValue
         self.age = json["age"].intValue
         self.description = json["description"].stringValue
-        self.imageRaw = json["imagen"].stringValue
-        print("Antes de entrar al primer if")
-        if let imageData = Data(base64Encoded: self.imageRaw, options: .init(rawValue: 0)) {
-            print("Entró al primer if: ", imageData)
+        self.base64ImageStr = json["imagen"].stringValue
+        
+        let str = self.base64ImageStr.replacingOccurrences(of: "data:image/jpeg;base64,", with: "")
+        if let imageData: Data = Data(base64Encoded: str, options: .ignoreUnknownCharacters) {
             if let image = UIImage(data: imageData) {
-                print("Image: ", image)
                 self.image = image
             }
         }
     }
-    
 }

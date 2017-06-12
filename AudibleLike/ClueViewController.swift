@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-class ClueViewController: UIViewController, UITextViewDelegate {
+class ClueViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate {
     
     var lostPerson: Lost!
     
@@ -21,8 +21,9 @@ class ClueViewController: UIViewController, UITextViewDelegate {
     }()
     
     
-    let subjectTextField: UITextField = {
+    lazy var subjectTextField: UITextField = {
         let textfield = UITextField()
+        textfield.delegate = self
         textfield.placeholder = "Asunto"
         textfield.font = .systemFont(ofSize: 18)
         return textfield
@@ -70,8 +71,30 @@ class ClueViewController: UIViewController, UITextViewDelegate {
     }
     
     func handleSendClue() {
-        guard let subject = subjectTextField.text, subject != "" else { return }
-        guard let detail = clueTextView.text, (detail.characters.count > 0) && (detail.characters.count < 101) && (detail != "Prueba") else { return }
+        guard let subject = subjectTextField.text, (subject.characters.count > 0) else {
+            let alert = UIAlertController(title: "Aviso", message: "El campo Asunto no puede estar vacío", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            present(alert, animated: true)
+            return
+        }
+        guard (subject.characters.count < 31) else {
+            let alert = UIAlertController(title: "Aviso", message: "El campo Asunto no debe exceder los 30 caracteres", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            present(alert, animated: true)
+            return
+        }
+        guard let detail = clueTextView.text, (detail.characters.count > 0) && (detail != "Pista") else {
+            let alert = UIAlertController(title: "Aviso", message: "El campo Pista no puede estar vacío", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            present(alert, animated: true)
+            return
+        }
+        guard (detail.characters.count < 401) else {
+            let alert = UIAlertController(title: "Aviso", message: "El campo Pista no debe exceder los 400 caracteres", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            present(alert, animated: true)
+            return
+        }
         guard let user = UserDefaults.standard.unarchiveUser().username else { return }
         let lostPerson = self.lostPerson.dni
         
