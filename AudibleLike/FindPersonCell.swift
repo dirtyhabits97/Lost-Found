@@ -16,7 +16,7 @@ class FindPersonCell: UITableViewCell {
     var lostPerson: Lost! {
         didSet {
             nameLabel.text = lostPerson.lastname + ", " + lostPerson.firstname
-            photoImageView.backgroundColor = orangeColor
+            photoImageView.image = lostPerson.image
         }
     }
     
