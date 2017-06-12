@@ -26,6 +26,7 @@ class FindPersonCell: UITableViewCell {
     let photoImageView: UIImageView = {
         let iv = UIImageView()
         iv.layer.cornerRadius = 20
+        iv.layer.masksToBounds = true
         return iv
     }()
     

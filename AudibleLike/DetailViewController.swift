@@ -91,7 +91,8 @@ class DetailViewController: UIViewController {
             make.height.equalTo(80)
         }
         photoImageView.snp.makeConstraints { (make) in
-            make.top.right.left.equalTo(view)
+            make.right.left.equalTo(view)
+            make.top.equalTo(topLayoutGuide.snp.bottom)
             make.height.equalTo(view.frame.height*(4/7))
         }
         detailLabel.snp.makeConstraints { (make) in
