@@ -14,6 +14,7 @@
 		7C4193101EB29FA600FBC6AD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C41930F1EB29FA600FBC6AD /* User.swift */; };
 		7C4193141EB3E95800FBC6AD /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4193131EB3E95800FBC6AD /* ProfileController.swift */; };
 		7C4AB6BD1EE60883001C8834 /* AudibleLikeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4AB6BC1EE60883001C8834 /* AudibleLikeTests.swift */; };
+		7C6732D61EF201E500645DC4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7C6732D51EF201E500645DC4 /* GoogleService-Info.plist */; };
 		7C7103741EC3BEA50040CA28 /* OptionsStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7103731EC3BEA50040CA28 /* OptionsStackView.swift */; };
 		7C7103771EC3D9DB0040CA28 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7103761EC3D9DB0040CA28 /* SearchTableViewController.swift */; };
 		7C7103791EC3EACD0040CA28 /* FindPersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7103781EC3EACD0040CA28 /* FindPersonCell.swift */; };
@@ -59,6 +60,7 @@
 		7C4AB6BA1EE60883001C8834 /* AudibleLikeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AudibleLikeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C4AB6BC1EE60883001C8834 /* AudibleLikeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudibleLikeTests.swift; sourceTree = "<group>"; };
 		7C4AB6BE1EE60883001C8834 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7C6732D51EF201E500645DC4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7C7103731EC3BEA50040CA28 /* OptionsStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsStackView.swift; sourceTree = "<group>"; };
 		7C7103761EC3D9DB0040CA28 /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		7C7103781EC3EACD0040CA28 /* FindPersonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindPersonCell.swift; sourceTree = "<group>"; };
@@ -155,7 +157,6 @@
 				7C9BD7101EC146E6003242CA /* Lost.swift */,
 			);
 			name = Models;
-			path = AudibleLike;
 			sourceTree = "<group>";
 		};
 		7C4193111EB3E94300FBC6AD /* Main */ = {
@@ -217,7 +218,6 @@
 			isa = PBXGroup;
 			children = (
 				7C4AB6C41EE61798001C8834 /* Tests */,
-				7C41930E1EB29F9B00FBC6AD /* Models */,
 				7CF906C71EAE6D3F00A9417E /* AudibleLike */,
 				7CF906C61EAE6D3F00A9417E /* Products */,
 				03118049215770C4FB9ED7EF /* Pods */,
@@ -237,6 +237,7 @@
 		7CF906C71EAE6D3F00A9417E /* AudibleLike */ = {
 			isa = PBXGroup;
 			children = (
+				7C41930E1EB29F9B00FBC6AD /* Models */,
 				7C9BD70B1EC12EE6003242CA /* Managers */,
 				7C4193111EB3E94300FBC6AD /* Main */,
 				7CF906E61EAED5B700A9417E /* Helpers */,
@@ -246,6 +247,7 @@
 				7CF906CF1EAE6D3F00A9417E /* Assets.xcassets */,
 				7CF906D11EAE6D3F00A9417E /* LaunchScreen.storyboard */,
 				7CF906D41EAE6D4000A9417E /* Info.plist */,
+				7C6732D51EF201E500645DC4 /* GoogleService-Info.plist */,
 			);
 			path = AudibleLike;
 			sourceTree = "<group>";
@@ -381,6 +383,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CF906D31EAE6D3F00A9417E /* LaunchScreen.storyboard in Resources */,
+				7C6732D61EF201E500645DC4 /* GoogleService-Info.plist in Resources */,
 				7CF906D01EAE6D3F00A9417E /* Assets.xcassets in Resources */,
 				7CF906CE1EAE6D3F00A9417E /* Main.storyboard in Resources */,
 			);

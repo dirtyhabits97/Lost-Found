@@ -9,6 +9,7 @@ target 'AudibleLike' do
   pod 'TRON', '~> 2.0.0'
   pod 'SnapKit', '~> 3.2.0'
   pod 'AlamofireImage', '~> 3.1'
+  pod 'Firebase/Core'
 
 end
 
