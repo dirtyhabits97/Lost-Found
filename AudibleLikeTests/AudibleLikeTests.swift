@@ -8,6 +8,7 @@
 
 import XCTest
 import SwiftyJSON
+import Firebase
 @testable import AudibleLike
 
 class AudibleLikeTests: XCTestCase {

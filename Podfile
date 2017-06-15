@@ -20,4 +20,7 @@ target 'AudibleLikeTests' do
     
     # Pods for AudibleLikeTests
     pod 'TRON', '~> 2.0.0'
+    pod 'Firebase/Core'
+    pod 'Firebase/Storage'
+    
 end

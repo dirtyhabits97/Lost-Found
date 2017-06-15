@@ -20,7 +20,7 @@ struct Service {
         let req:APIRequest<Credential, JSONError> = tron.request("/register")
         req.parameters = ["name" : name, "username" : username, "password" : password]
         req.perform(withSuccess: { (response) in
-            print("Shit got fetched homie")
+            print("Succesfully registered user")
             completion(response.result)
         }) { (err) in
             print("Failed to register user...", err)
