@@ -10,6 +10,7 @@ target 'AudibleLike' do
   pod 'SnapKit', '~> 3.2.0'
   pod 'AlamofireImage', '~> 3.1'
   pod 'Firebase/Core'
+  pod 'Firebase/Storage'
 
 end
 
