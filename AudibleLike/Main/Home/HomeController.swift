@@ -74,14 +74,6 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
             self.collectionView?.reloadData()
         }
     }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        Service.sharedInstance.fetchCategories { (categories) in
-//            self.categories = categories
-//            self.collectionView?.reloadData()
-//        }
-//    }
 }
 
 
@@ -89,19 +81,33 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
 
 extension HomeController {
     func pushOptionViews<T>(customController: T) where T : UIViewController {
+        handleDismiss()
         navigationController?.pushViewController(customController, animated: true)
     }
-    
-    func pushTableView<T>(customController: T) where T : UITableViewController{
-        let searchTableViewController = customController as! SearchTableViewController
+    func handleSearchTableViewController() {
+        handleDismiss()
+        let searchTableViewController = SearchTableViewController()
         searchTableViewController.everyLostPeople = everyLostPeople ?? []
         navigationController?.pushViewController(searchTableViewController, animated: true)
-    }
-    
+    }    
     func showDetailFor(lostPerson: Lost) {
         let detailViewController = DetailViewController()
         detailViewController.lostPerson = lostPerson
         navigationController?.pushViewController(detailViewController, animated: true)
+    }
+    func handleReportView() {
+        handleDismiss()
+        let reportController = ReportController()
+        navigationController?.pushViewController(reportController, animated: true)
+    }
+    func handleMapView() {
+        handleDismiss()
+        let mapController = MapController()
+        mapController.everyLostPeople = everyLostPeople
+        present(mapController, animated: true)
+    }
+    func handleNewsController() {
+        
     }
 }
 
@@ -116,7 +122,6 @@ extension HomeController {
         let profileController = ProfileController()
         profileController.user = user
         self.navigationController?.pushViewController(profileController, animated: true)
-//        present(profileController, animated: true, completion: nil)
     }
     
     func showMoreOptions() {
@@ -149,18 +154,18 @@ extension HomeController {
             }
         }
     }
-    func handleDismissToPushVC(completion: @escaping () -> ()) {
-        UIView.animate(withDuration: 0.1, delay: 0, usingSpringWithDamping: 0.1, initialSpringVelocity: 0.1, options: .curveEaseOut, animations: { 
-            
-            self.whiteView.alpha = 0
-            if let window = UIApplication.shared.keyWindow {
-                self.moreOptionsView.frame = CGRect(x: window.frame.width, y: self.y, width: self.moreOptionsView.frame.width, height: self.moreOptionsView.frame.height)
-            }
-            
-        }) { _ in
-            completion()
-        }
-    }
+//    func handleDismissToPushVC(completion: @escaping () -> ()) {
+//        UIView.animate(withDuration: 0.1, delay: 0, usingSpringWithDamping: 0.1, initialSpringVelocity: 0.1, options: .curveEaseOut, animations: { 
+//            
+//            self.whiteView.alpha = 0
+//            if let window = UIApplication.shared.keyWindow {
+//                self.moreOptionsView.frame = CGRect(x: window.frame.width, y: self.y, width: self.moreOptionsView.frame.width, height: self.moreOptionsView.frame.height)
+//            }
+//            
+//        }) { _ in
+//            completion()
+//        }
+//    }
 }
 
 

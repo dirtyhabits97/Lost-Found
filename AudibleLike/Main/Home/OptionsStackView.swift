@@ -34,32 +34,35 @@ class OptionsStackView: UIStackView {
     var homeDelegate: HomeDelegate?
     
     var buttonArray: [UIButton] {
-        return [searchButton, addButton, showMapButton, showNewsButton]
+        return [searchButton, reportButton, showMapButton, showNewsButton]
     }
     
     // MARK: - Interface Objects
     let searchButton: OptionButton = {
         let button = OptionButton()
         button.setTitle("Buscar Personas", for: .normal)
-        button.addTarget(self, action: #selector(handleSearchView), for: .touchUpInside)
+        button.addTarget(self, action: #selector(handleSearchController), for: .touchUpInside)
         return button
     }()
     
-    let addButton: OptionButton = {
+    let reportButton: OptionButton = {
         let button = OptionButton()
         button.setTitle("Presentar Denuncia", for: .normal)
+        button.addTarget(self, action: #selector(handleReportController), for: .touchUpInside)
         return button
     }()
     
     let showMapButton: OptionButton = {
         let button = OptionButton()
         button.setTitle("Ver Mapa", for: .normal)
+        button.addTarget(self, action: #selector(handleMapController), for: .touchUpInside)
         return button
     }()
     
     let showNewsButton: OptionButton = {
         let button = OptionButton()
         button.setTitle("Ver Noticias", for: .normal)
+        button.addTarget(self, action: #selector(handleNewsController), for: .touchUpInside)
         return button
     }()
     
@@ -79,7 +82,7 @@ class OptionsStackView: UIStackView {
     
     func setupViews(){
         addArrangedSubview(searchButton)
-        addArrangedSubview(addButton)
+        addArrangedSubview(reportButton)
         addArrangedSubview(showMapButton)
         addArrangedSubview(showNewsButton)
     }
@@ -90,10 +93,20 @@ class OptionsStackView: UIStackView {
 
 extension OptionsStackView {
     
-    func handleSearchView() {
-        let vc = SearchTableViewController()
-        homeDelegate?.handleDismissToPushVC { _ in
-            self.homeDelegate?.pushTableView(customController: vc)
-        }        
+    func handleSearchController() {
+        print("Handling search view...")
+        homeDelegate?.handleSearchTableViewController()
+    }
+    func handleReportController() {
+        print("Handling report view...")
+        homeDelegate?.handleReportView()
+    }
+    func handleMapController() {
+        print("Handling map view...")
+        homeDelegate?.handleMapView()
+    }
+    func handleNewsController() {
+        print("Handling news views...")
+        homeDelegate?.handleNewsController()
     }
 }

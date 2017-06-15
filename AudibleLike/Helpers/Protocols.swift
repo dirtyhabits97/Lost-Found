@@ -15,9 +15,11 @@ protocol LoginControllerDelegate: class {
 }
 
 protocol HomeDelegate: class {
-    func pushOptionViews<T: UIViewController>(customController: T)
-    func pushTableView<T: UITableViewController>(customController: T)
-    func handleDismissToPushVC(completion: @escaping () -> ())
+    func handleMapView()
+    func handleReportView()
+    func handleSearchTableViewController()
+    func handleNewsController()
+//    func handleDismissToPushVC(completion: @escaping () -> ())
 }
 
 protocol LostPersonCellDelegate: class {

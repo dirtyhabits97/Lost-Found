@@ -28,7 +28,6 @@ class LostPersonCell: UICollectionViewCell {
     
     lazy var photoImage: CustomImageView = {
         let iv = CustomImageView()
-        iv.backgroundColor = orangeColor
         iv.layer.cornerRadius = self.width / 2
         iv.layer.masksToBounds = true
         return iv
