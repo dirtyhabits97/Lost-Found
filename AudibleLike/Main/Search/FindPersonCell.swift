@@ -16,15 +16,15 @@ class FindPersonCell: UITableViewCell {
     var lostPerson: Lost! {
         didSet {
             nameLabel.text = lostPerson.lastname + ", " + lostPerson.firstname
-            photoImageView.image = lostPerson.image
+            photoImageView.loadImage(with: lostPerson.imageUrl)
         }
     }
     
     
     // MARK: - Interface Objects
     
-    let photoImageView: UIImageView = {
-        let iv = UIImageView()
+    let photoImageView: CustomImageView = {
+        let iv = CustomImageView()
         iv.layer.cornerRadius = 20
         iv.layer.masksToBounds = true
         return iv

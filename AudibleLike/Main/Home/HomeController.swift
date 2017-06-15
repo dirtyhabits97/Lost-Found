@@ -98,7 +98,6 @@ extension HomeController {
         navigationController?.pushViewController(searchTableViewController, animated: true)
     }
     
-    
     func showDetailFor(lostPerson: Lost) {
         let detailViewController = DetailViewController()
         detailViewController.lostPerson = lostPerson

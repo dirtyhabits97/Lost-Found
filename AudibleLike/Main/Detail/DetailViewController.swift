@@ -28,16 +28,15 @@ class DetailViewController: UIViewController {
             attributedTextForDetail.append(NSAttributedString(string: lostPerson.description))
             detailLabel.attributedText = attributedTextForDetail
             
-            photoImageView.image = lostPerson.image
+            photoImageView.loadImage(with: lostPerson.imageUrl)
         }
     }
     
     
     // MARK: - Interface Objects
         
-    let photoImageView: UIImageView = {
-        let iv = UIImageView()
-        iv.backgroundColor = orangeColor
+    let photoImageView: CustomImageView = {
+        let iv = CustomImageView()
         return iv
     }()
     let nameLabel: UILabel = {

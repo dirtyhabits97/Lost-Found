@@ -16,7 +16,7 @@ class LostPersonCell: UICollectionViewCell {
     var lostPerson: Lost! {
         didSet {
             nameLabel.text = lostPerson.lastname + ", " + lostPerson.firstname
-            photoImage.image = lostPerson.image
+            photoImage.loadImage(with: lostPerson.imageUrl)
         }
     }
     
@@ -26,8 +26,8 @@ class LostPersonCell: UICollectionViewCell {
     
     // MARK: - Interface Objects
     
-    lazy var photoImage: UIImageView = {
-        let iv = UIImageView()
+    lazy var photoImage: CustomImageView = {
+        let iv = CustomImageView()
         iv.backgroundColor = orangeColor
         iv.layer.cornerRadius = self.width / 2
         iv.layer.masksToBounds = true

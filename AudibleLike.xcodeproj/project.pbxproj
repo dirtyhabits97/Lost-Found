@@ -20,6 +20,7 @@
 		7C7103791EC3EACD0040CA28 /* FindPersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7103781EC3EACD0040CA28 /* FindPersonCell.swift */; };
 		7C71037B1EC4DCC40040CA28 /* BaseCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C71037A1EC4DCC40040CA28 /* BaseCells.swift */; };
 		7C71037D1EC4DD590040CA28 /* ProfileDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C71037C1EC4DD590040CA28 /* ProfileDetailCell.swift */; };
+		7C8D7F851EF2E3680061FFC0 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8D7F841EF2E3680061FFC0 /* CustomImageView.swift */; };
 		7C9BD70D1EC13060003242CA /* TextField+helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9BD70C1EC13060003242CA /* TextField+helpers.swift */; };
 		7C9BD70F1EC13D1D003242CA /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9BD70E1EC13D1D003242CA /* Protocols.swift */; };
 		7C9BD7111EC146E6003242CA /* Lost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9BD7101EC146E6003242CA /* Lost.swift */; };
@@ -67,6 +68,7 @@
 		7C71037A1EC4DCC40040CA28 /* BaseCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseCells.swift; path = Helpers/BaseCells.swift; sourceTree = "<group>"; };
 		7C71037C1EC4DD590040CA28 /* ProfileDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileDetailCell.swift; path = Main/Profile/ProfileDetailCell.swift; sourceTree = "<group>"; };
 		7C8198841ED7401C00F32812 /* MyExtensions.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MyExtensions.framework; path = "../../../../Users/gonzaloreyes/Library/Developer/Xcode/DerivedData/AudibleLike-gatvxdvjcthsgjalrrirlocbuvam/Build/Products/Debug-iphoneos/MyExtensions/MyExtensions.framework"; sourceTree = "<group>"; };
+		7C8D7F841EF2E3680061FFC0 /* CustomImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		7C9BD70C1EC13060003242CA /* TextField+helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TextField+helpers.swift"; path = "Helpers/TextField+helpers.swift"; sourceTree = "<group>"; };
 		7C9BD70E1EC13D1D003242CA /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Protocols.swift; path = Helpers/Protocols.swift; sourceTree = "<group>"; };
 		7C9BD7101EC146E6003242CA /* Lost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Lost.swift; path = Models/Lost.swift; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 				7C9BD70C1EC13060003242CA /* TextField+helpers.swift */,
 				7C9BD70E1EC13D1D003242CA /* Protocols.swift */,
 				7C71037A1EC4DCC40040CA28 /* BaseCells.swift */,
+				7C8D7F841EF2E3680061FFC0 /* CustomImageView.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -498,6 +501,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CF906E31EAED4CD00A9417E /* UserDefaults+helpers.swift in Sources */,
+				7C8D7F851EF2E3680061FFC0 /* CustomImageView.swift in Sources */,
 				7C7103771EC3D9DB0040CA28 /* SearchTableViewController.swift in Sources */,
 				7C9BD70D1EC13060003242CA /* TextField+helpers.swift in Sources */,
 				7CF906E11EAEB7AF00A9417E /* HomeNavigationController.swift in Sources */,

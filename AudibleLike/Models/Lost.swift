@@ -56,8 +56,7 @@ class Lost: JSONDecodable{
     let dni: String
     let age: Int
     let description: String
-    let base64ImageStr: String
-    var image: UIImage?
+    let imageUrl: String
 
     init(firstname: String, lastname: String, dni: String, age: Int, description: String, base64ImageStr: String = "") {
         self.firstname = firstname
@@ -65,13 +64,8 @@ class Lost: JSONDecodable{
         self.dni = dni
         self.age = age
         self.description = description
-        self.base64ImageStr = base64ImageStr
-        let str = self.base64ImageStr.replacingOccurrences(of: "data:image/jpeg;base64,", with: "")
-        if let imageData: Data = Data(base64Encoded: str, options: .ignoreUnknownCharacters) {
-            if let image = UIImage(data: imageData) {
-                self.image = image
-            }
-        }
+        self.imageUrl = base64ImageStr
+        let str = self.imageUrl.replacingOccurrences(of: "data:image/jpeg;base64,", with: "")
     }
     
     required init(json: JSON) throws {
@@ -80,13 +74,6 @@ class Lost: JSONDecodable{
         self.dni = json["dni"].stringValue
         self.age = json["age"].intValue
         self.description = json["description"].stringValue
-        self.base64ImageStr = json["imagen"].stringValue
-        
-        let str = self.base64ImageStr.replacingOccurrences(of: "data:image/jpeg;base64,", with: "")
-        if let imageData: Data = Data(base64Encoded: str, options: .ignoreUnknownCharacters) {
-            if let image = UIImage(data: imageData) {
-                self.image = image
-            }
-        }
+        self.imageUrl = json["imagen"].stringValue
     }
 }
