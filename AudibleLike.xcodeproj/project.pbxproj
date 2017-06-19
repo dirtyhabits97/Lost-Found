@@ -162,8 +162,7 @@
 				7C404D641EF8257A00A56CDE /* ProfileController.swift */,
 				7C404D661EF825B800A56CDE /* ProfileDetailCell.swift */,
 			);
-			name = Profile;
-			path = ProfileOld;
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		7C41930E1EB29F9B00FBC6AD /* Models */ = {
