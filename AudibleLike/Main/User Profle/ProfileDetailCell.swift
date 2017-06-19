@@ -1,5 +1,5 @@
 //
-//  UserProfileDetailCell.swift
+//  ProfileDetailCell.swift
 //  AudibleLike
 //
 //  Created by Gonzalo Reyes Huertas on 6/19/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserProfileDetailCell: BaseTableViewCell {
+class ProfileDetailCell: BaseTableViewCell {
     
     let settingInfoLabel: UILabel  = {
         let label = UILabel()

@@ -1,5 +1,5 @@
 //
-//  UserProfileController.swift
+//  ProfileController.swift
 //  AudibleLike
 //
 //  Created by Gonzalo Reyes Huertas on 6/19/17.
@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import AlamofireImage
 
-class UserProfileController: UITableViewController{
+class ProfileController: UITableViewController{
     
     // MARK: - Object Variables
     
@@ -89,7 +89,7 @@ class UserProfileController: UITableViewController{
     }
     
     func setupViews() {
-        tableView.register(UserProfileDetailCell.self, forCellReuseIdentifier: cellId)
+        tableView.register(ProfileDetailCell.self, forCellReuseIdentifier: cellId)
         tableView.register(UITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: footerId)
     }
 }
@@ -97,7 +97,7 @@ class UserProfileController: UITableViewController{
 
 // MARK: - TableView Methods
 
-extension UserProfileController {
+extension ProfileController {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 2
@@ -115,7 +115,7 @@ extension UserProfileController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let section = indexPath.section
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! UserProfileDetailCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! ProfileDetailCell
         switch section{
         case 0:
             let item = profileItem.init(rawValue: indexPath.row)
@@ -149,7 +149,7 @@ extension UserProfileController {
 
 // MARK: - Handle Actions
 
-extension UserProfileController {
+extension ProfileController {
     
     func handleLogOut() {
         UserDefaults.standard.setIsLoggedIn(value: false)

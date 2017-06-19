@@ -119,7 +119,7 @@ extension HomeController {
     
     
     func showProfile() {
-        let profileController = UserProfileController()
+        let profileController = ProfileController()
         profileController.user = user
         self.navigationController?.pushViewController(profileController, animated: true)
     }
