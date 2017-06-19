@@ -11,15 +11,15 @@
 		665FA5F5D667AB977C9C7416 /* Pods_AudibleLikeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1452CDCF80727312736C45CD /* Pods_AudibleLikeTests.framework */; };
 		7C0973A81EDC888600FACC60 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0973A71EDC888600FACC60 /* DetailViewController.swift */; };
 		7C0973AC1EDCC4BB00FACC60 /* ClueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0973AB1EDCC4BB00FACC60 /* ClueViewController.swift */; };
-		7C404D561EF822A400A56CDE /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C404D551EF822A400A56CDE /* ProfileController.swift */; };
-		7C404D581EF8231000A56CDE /* ProfileDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C404D571EF8231000A56CDE /* ProfileDetailCell.swift */; };
 		7C4193101EB29FA600FBC6AD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C41930F1EB29FA600FBC6AD /* User.swift */; };
+		7C4193141EB3E95800FBC6AD /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4193131EB3E95800FBC6AD /* ProfileController.swift */; };
 		7C4AB6BD1EE60883001C8834 /* AudibleLikeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4AB6BC1EE60883001C8834 /* AudibleLikeTests.swift */; };
 		7C6732D61EF201E500645DC4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7C6732D51EF201E500645DC4 /* GoogleService-Info.plist */; };
 		7C7103741EC3BEA50040CA28 /* OptionsStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7103731EC3BEA50040CA28 /* OptionsStackView.swift */; };
 		7C7103771EC3D9DB0040CA28 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7103761EC3D9DB0040CA28 /* SearchTableViewController.swift */; };
 		7C7103791EC3EACD0040CA28 /* FindPersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7103781EC3EACD0040CA28 /* FindPersonCell.swift */; };
 		7C71037B1EC4DCC40040CA28 /* BaseCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C71037A1EC4DCC40040CA28 /* BaseCells.swift */; };
+		7C71037D1EC4DD590040CA28 /* ProfileDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C71037C1EC4DD590040CA28 /* ProfileDetailCell.swift */; };
 		7C8D7F851EF2E3680061FFC0 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8D7F841EF2E3680061FFC0 /* CustomImageView.swift */; };
 		7C8D7F891EF2F0460061FFC0 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8D7F881EF2F0460061FFC0 /* MapController.swift */; };
 		7C8D7F8B1EF30CF60061FFC0 /* ReportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8D7F8A1EF30CF60061FFC0 /* ReportController.swift */; };
@@ -56,28 +56,28 @@
 		1452CDCF80727312736C45CD /* Pods_AudibleLikeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AudibleLikeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4171BD961EB5A0F900C6C6DD /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Service.swift; path = Managers/WebService/Service.swift; sourceTree = "<group>"; };
 		4FB8BF50F9FD7FE91C725190 /* Pods-AudibleLike.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudibleLike.release.xcconfig"; path = "Pods/Target Support Files/Pods-AudibleLike/Pods-AudibleLike.release.xcconfig"; sourceTree = "<group>"; };
-		7C0973A71EDC888600FACC60 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = AudibleLike/Main/Detail/DetailViewController.swift; sourceTree = "<group>"; };
-		7C0973AB1EDCC4BB00FACC60 /* ClueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClueViewController.swift; path = AudibleLike/Main/Detail/ClueViewController.swift; sourceTree = "<group>"; };
-		7C404D551EF822A400A56CDE /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
-		7C404D571EF8231000A56CDE /* ProfileDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileDetailCell.swift; sourceTree = "<group>"; };
+		7C0973A71EDC888600FACC60 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = Main/Detail/DetailViewController.swift; sourceTree = "<group>"; };
+		7C0973AB1EDCC4BB00FACC60 /* ClueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClueViewController.swift; path = Main/Detail/ClueViewController.swift; sourceTree = "<group>"; };
 		7C41930F1EB29FA600FBC6AD /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Models/User.swift; sourceTree = "<group>"; };
+		7C4193131EB3E95800FBC6AD /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileController.swift; path = Main/Profile/ProfileController.swift; sourceTree = "<group>"; };
 		7C4AB6BA1EE60883001C8834 /* AudibleLikeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AudibleLikeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C4AB6BC1EE60883001C8834 /* AudibleLikeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudibleLikeTests.swift; sourceTree = "<group>"; };
 		7C4AB6BE1EE60883001C8834 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C6732D51EF201E500645DC4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		7C7103731EC3BEA50040CA28 /* OptionsStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OptionsStackView.swift; path = Home/OptionsStackView.swift; sourceTree = "<group>"; };
-		7C7103761EC3D9DB0040CA28 /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchTableViewController.swift; path = AudibleLike/Main/Search/SearchTableViewController.swift; sourceTree = "<group>"; };
-		7C7103781EC3EACD0040CA28 /* FindPersonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FindPersonCell.swift; path = AudibleLike/Main/Search/FindPersonCell.swift; sourceTree = "<group>"; };
+		7C7103731EC3BEA50040CA28 /* OptionsStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OptionsStackView.swift; path = Main/Home/OptionsStackView.swift; sourceTree = "<group>"; };
+		7C7103761EC3D9DB0040CA28 /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchTableViewController.swift; path = Main/Search/SearchTableViewController.swift; sourceTree = "<group>"; };
+		7C7103781EC3EACD0040CA28 /* FindPersonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FindPersonCell.swift; path = Main/Search/FindPersonCell.swift; sourceTree = "<group>"; };
 		7C71037A1EC4DCC40040CA28 /* BaseCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseCells.swift; path = Helpers/BaseCells.swift; sourceTree = "<group>"; };
+		7C71037C1EC4DD590040CA28 /* ProfileDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileDetailCell.swift; path = Main/Profile/ProfileDetailCell.swift; sourceTree = "<group>"; };
 		7C8198841ED7401C00F32812 /* MyExtensions.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MyExtensions.framework; path = "../../../../Users/gonzaloreyes/Library/Developer/Xcode/DerivedData/AudibleLike-gatvxdvjcthsgjalrrirlocbuvam/Build/Products/Debug-iphoneos/MyExtensions/MyExtensions.framework"; sourceTree = "<group>"; };
 		7C8D7F841EF2E3680061FFC0 /* CustomImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
-		7C8D7F881EF2F0460061FFC0 /* MapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapController.swift; path = AudibleLike/Main/Map/MapController.swift; sourceTree = "<group>"; };
-		7C8D7F8A1EF30CF60061FFC0 /* ReportController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReportController.swift; path = AudibleLike/Main/Report/ReportController.swift; sourceTree = "<group>"; };
+		7C8D7F881EF2F0460061FFC0 /* MapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapController.swift; path = Main/Map/MapController.swift; sourceTree = "<group>"; };
+		7C8D7F8A1EF30CF60061FFC0 /* ReportController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReportController.swift; path = Main/Report/ReportController.swift; sourceTree = "<group>"; };
 		7C9BD70C1EC13060003242CA /* TextField+helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TextField+helpers.swift"; path = "Helpers/TextField+helpers.swift"; sourceTree = "<group>"; };
 		7C9BD70E1EC13D1D003242CA /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Protocols.swift; path = Helpers/Protocols.swift; sourceTree = "<group>"; };
 		7C9BD7101EC146E6003242CA /* Lost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Lost.swift; path = Models/Lost.swift; sourceTree = "<group>"; };
-		7CC5096A1EC26455000E869C /* HomeControllerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeControllerCell.swift; path = Home/HomeControllerCell.swift; sourceTree = "<group>"; };
-		7CC5096C1EC26DD7000E869C /* LostPersonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LostPersonCell.swift; path = Home/LostPersonCell.swift; sourceTree = "<group>"; };
+		7CC5096A1EC26455000E869C /* HomeControllerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeControllerCell.swift; path = Main/Home/HomeControllerCell.swift; sourceTree = "<group>"; };
+		7CC5096C1EC26DD7000E869C /* LostPersonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LostPersonCell.swift; path = Main/Home/LostPersonCell.swift; sourceTree = "<group>"; };
 		7CF906C51EAE6D3F00A9417E /* AudibleLike.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudibleLike.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CF906C81EAE6D3F00A9417E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CF906CA1EAE6D3F00A9417E /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginController.swift; path = Login/LoginController.swift; sourceTree = "<group>"; };
@@ -88,9 +88,9 @@
 		7CF906DA1EAE6EC600A9417E /* Page.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Page.swift; path = Models/Page.swift; sourceTree = "<group>"; };
 		7CF906DC1EAE765B00A9417E /* GuideCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GuideCell.swift; path = Login/GuideCell.swift; sourceTree = "<group>"; };
 		7CF906DE1EAE94E300A9417E /* LoginCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginCell.swift; path = Login/LoginCell.swift; sourceTree = "<group>"; };
-		7CF906E01EAEB7AF00A9417E /* HomeNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeNavigationController.swift; path = Home/HomeNavigationController.swift; sourceTree = "<group>"; };
+		7CF906E01EAEB7AF00A9417E /* HomeNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeNavigationController.swift; path = Main/Home/HomeNavigationController.swift; sourceTree = "<group>"; };
 		7CF906E21EAED4CD00A9417E /* UserDefaults+helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UserDefaults+helpers.swift"; path = "Helpers/UserDefaults+helpers.swift"; sourceTree = "<group>"; };
-		7CF906E71EAED75600A9417E /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeController.swift; path = Home/HomeController.swift; sourceTree = "<group>"; };
+		7CF906E71EAED75600A9417E /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeController.swift; path = Main/Home/HomeController.swift; sourceTree = "<group>"; };
 		9890D0C469D2FC847D14F56B /* Pods-AudibleLikeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudibleLikeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AudibleLikeTests/Pods-AudibleLikeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AB0DD33F7A24B3E96BF7B724 /* Pods-AudibleLikeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudibleLikeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AudibleLikeTests/Pods-AudibleLikeTests.release.xcconfig"; sourceTree = "<group>"; };
 		F77E25E883A2707C35783B58 /* Pods-AudibleLike.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudibleLike.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AudibleLike/Pods-AudibleLike.debug.xcconfig"; sourceTree = "<group>"; };
@@ -156,15 +156,6 @@
 			path = Main/Detail;
 			sourceTree = "<group>";
 		};
-		7C404D541EF8224300A56CDE /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-				7C404D551EF822A400A56CDE /* ProfileController.swift */,
-				7C404D571EF8231000A56CDE /* ProfileDetailCell.swift */,
-			);
-			path = Profile;
-			sourceTree = "<group>";
-		};
 		7C41930E1EB29F9B00FBC6AD /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,14 +169,24 @@
 		7C4193111EB3E94300FBC6AD /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				7C404D541EF8224300A56CDE /* Profile */,
 				7C8D7F871EF2ED090061FFC0 /* Map */,
 				7C8D7F861EF2ECE10061FFC0 /* Report */,
 				7C0973A61EDC87B900FACC60 /* Detail */,
 				7C7103751EC3D9C80040CA28 /* Search */,
+				7C4193121EB3E94C00FBC6AD /* Profile */,
 				7CF906E51EAED5AB00A9417E /* Home */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		7C4193121EB3E94C00FBC6AD /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				7C71037C1EC4DD590040CA28 /* ProfileDetailCell.swift */,
+				7C4193131EB3E95800FBC6AD /* ProfileController.swift */,
+			);
+			name = Profile;
+			path = Main/Profile;
 			sourceTree = "<group>";
 		};
 		7C4AB6BB1EE60883001C8834 /* Unit */ = {
@@ -526,7 +527,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C404D561EF822A400A56CDE /* ProfileController.swift in Sources */,
 				7CF906E31EAED4CD00A9417E /* UserDefaults+helpers.swift in Sources */,
 				7C8D7F851EF2E3680061FFC0 /* CustomImageView.swift in Sources */,
 				7C7103771EC3D9DB0040CA28 /* SearchTableViewController.swift in Sources */,
@@ -540,15 +540,16 @@
 				7CC5096D1EC26DD7000E869C /* LostPersonCell.swift in Sources */,
 				7CF906E81EAED75600A9417E /* HomeController.swift in Sources */,
 				7C0973A81EDC888600FACC60 /* DetailViewController.swift in Sources */,
+				7C71037D1EC4DD590040CA28 /* ProfileDetailCell.swift in Sources */,
 				7CF906DF1EAE94E300A9417E /* LoginCell.swift in Sources */,
 				7C7103791EC3EACD0040CA28 /* FindPersonCell.swift in Sources */,
+				7C4193141EB3E95800FBC6AD /* ProfileController.swift in Sources */,
 				7CC5096B1EC26455000E869C /* HomeControllerCell.swift in Sources */,
 				7C0973AC1EDCC4BB00FACC60 /* ClueViewController.swift in Sources */,
 				7C7103741EC3BEA50040CA28 /* OptionsStackView.swift in Sources */,
 				7C71037B1EC4DCC40040CA28 /* BaseCells.swift in Sources */,
 				7CF906DB1EAE6EC600A9417E /* Page.swift in Sources */,
 				7C4193101EB29FA600FBC6AD /* User.swift in Sources */,
-				7C404D581EF8231000A56CDE /* ProfileDetailCell.swift in Sources */,
 				7C8D7F8B1EF30CF60061FFC0 /* ReportController.swift in Sources */,
 				7C8D7F891EF2F0460061FFC0 /* MapController.swift in Sources */,
 				7CF906C91EAE6D3F00A9417E /* AppDelegate.swift in Sources */,
