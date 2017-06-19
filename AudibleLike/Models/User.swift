@@ -10,7 +10,7 @@ import Foundation
 import TRON
 import SwiftyJSON
 
-class User: NSObject, NSCoding, JSONDecodable {
+class User: NSObject, NSCoding {
     
     let name: String?
     let username: String?
@@ -20,11 +20,9 @@ class User: NSObject, NSCoding, JSONDecodable {
         self.username = name == "" ? nil : username
     }
     
-    required init(json: JSON) throws {
-        let name = json["nombre"].stringValue
-        let username = json["usuario"].stringValue
-        self.name = name == "" ? nil : name
-        self.username = username == "" ? nil : username
+    init(dictionary: [String:Any]) {
+        self.name = dictionary["nombre"] as? String ?? ""
+        self.username = dictionary["usuario"] as? String ?? ""
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
@@ -40,10 +38,10 @@ class User: NSObject, NSCoding, JSONDecodable {
     
 }
 
-class Credential: JSONDecodable{
+class Credential {
     let result: Bool
     
-    required init(json: JSON) throws {
-        self.result = json["resultado"].boolValue
+    init(dictionary: [String:Any]) {
+        self.result = (dictionary["resultado"] as? NSNumber ?? 0) == 0 ? false : true
     }
 }

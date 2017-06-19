@@ -11,25 +11,25 @@ import TRON
 import SwiftyJSON
 import MapKit
 
-class Categories: JSONDecodable {
+class Categories {
     let lostCategories: [LostCategory]?
     
     init(lostCategories: [LostCategory]?) {
         self.lostCategories = lostCategories
     }
-    //{categorias: [{nombre:1, perdidos: []}, {nombre:2, pedidos: []}]}
-    required init(json: JSON) throws {
+    init(dictionary: [String:Any]) {
         var _lostCategories: [LostCategory] = []
-        for (_,category) in json["categorias"] {
-            let category = try LostCategory(json: category)
-            print(category.name)
-            _lostCategories.append(category)
+        if let dictionaries = dictionary["categorias"] as? [[String:Any]] {
+            for dict in dictionaries {
+                let category = LostCategory(dictionary: dict)
+                _lostCategories.append(category)
+            }
         }
         self.lostCategories = _lostCategories
     }
 }
 
-class LostCategory: JSONDecodable {
+class LostCategory {
     
     let name: String
     let lostArray: [Lost]?
@@ -38,19 +38,20 @@ class LostCategory: JSONDecodable {
         self.name = name
         self.lostArray = lostArray
     }
-    //{categoria: "", perdidos: [{uno},{dos}]}
-    required init (json: JSON) throws {
-        self.name = json["nombre"].stringValue
+    init(dictionary: [String:Any]) {
         var _lostArray: [Lost] = []
-        for (_,lost) in json["perdidos"] {
-            let lost = try Lost(json: lost)
-            _lostArray.append(lost)
+        self.name = dictionary["nombre"] as? String ?? ""
+        if let dictionaries = dictionary["perdidos"] as? [[String:Any]] {
+            for dict in dictionaries {
+                let lost = Lost(dictionary: dict)
+                _lostArray.append(lost)
+            }
         }
         self.lostArray = _lostArray
     }
 }
 
-class Lost: JSONDecodable{
+class Lost {
     
     let firstname: String
     let lastname: String
@@ -71,16 +72,15 @@ class Lost: JSONDecodable{
         self.latitude = latitude//-12.0854081
         self.longitude = longitude//-76.9719187
     }
-    
-    required init(json: JSON) throws {
-        self.firstname = json["nombre"].stringValue
-        self.lastname = json["apellido"].stringValue
-        self.dni = json["dni"].stringValue
-        self.age = json["age"].intValue
-        self.description = json["description"].stringValue
-        self.imageUrl = json["imagen"].stringValue
-        self.latitude = json["longitude"].doubleValue //-12.0854081
-        self.longitude = json["latitude"].doubleValue //-76.9719187
+    init(dictionary: [String:Any]) {
+        self.firstname = dictionary["nombre"] as? String ?? ""
+        self.lastname = dictionary["apellido"] as? String ?? ""
+        self.dni = dictionary["dni"] as? String ?? ""
+        self.age = dictionary["age"] as? Int ?? 0
+        self.description = dictionary["description"] as? String ?? ""
+        self.imageUrl = dictionary["imagen"] as? String ?? ""
+        self.longitude = dictionary["longitud"] as? Double ?? 0
+        self.latitude = dictionary["latitud"] as? Double ?? 0
     }
 }
 

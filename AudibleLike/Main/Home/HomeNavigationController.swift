@@ -10,11 +10,17 @@ import UIKit
 
 class HomeNavigationController: UINavigationController {
     
+    // MARK: - Object Variables
+    
+    let rightToLeftAnimationTransition = RightToLeftAnimationTransition()
+    let leftToRightAnimationTransition = LeftToRightAnimationTransition()
+    
     // MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        self.delegate = self
         if isLogged() {
             let flowLayout = UICollectionViewFlowLayout()
             let homeController = HomeController(collectionViewLayout: flowLayout)
@@ -38,5 +44,21 @@ class HomeNavigationController: UINavigationController {
             //something goes here
         }
     }
-    
+}
+
+
+// MARK: - UINavigationControllerDelegate Methods
+
+extension HomeNavigationController: UINavigationControllerDelegate {
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        if toVC.isKind(of: ClueViewController.self) || toVC.isKind(of: ReportController.self){
+            if operation == .push {
+                return rightToLeftAnimationTransition
+            } else if operation == .pop {
+                return leftToRightAnimationTransition
+            }
+            
+        }
+        return nil
+    }
 }

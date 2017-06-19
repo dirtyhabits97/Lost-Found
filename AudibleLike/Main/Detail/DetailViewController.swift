@@ -32,7 +32,6 @@ class DetailViewController: UIViewController {
         }
     }
     
-    
     // MARK: - Interface Objects
         
     let photoImageView: CustomImageView = {
@@ -72,11 +71,11 @@ class DetailViewController: UIViewController {
     // MARK: - View Lifecycle
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         view.backgroundColor = .white
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(handleClueView))
         navigationItem.title = "Detalle"
-        super.viewDidLoad()
         setupViews()
     }
     

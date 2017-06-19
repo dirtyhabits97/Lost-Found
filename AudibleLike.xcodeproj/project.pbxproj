@@ -13,6 +13,9 @@
 		7C0973AC1EDCC4BB00FACC60 /* ClueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0973AB1EDCC4BB00FACC60 /* ClueViewController.swift */; };
 		7C404D6F1EF82CE300A56CDE /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C404D6E1EF82CE300A56CDE /* ProfileController.swift */; };
 		7C404D711EF82D5600A56CDE /* ProfileDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C404D701EF82D5600A56CDE /* ProfileDetailCell.swift */; };
+		7C404D731EF830BA00A56CDE /* UIImage+helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C404D721EF830BA00A56CDE /* UIImage+helpers.swift */; };
+		7C404D751EF838F000A56CDE /* RightToLeftAnimationTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C404D741EF838F000A56CDE /* RightToLeftAnimationTransition.swift */; };
+		7C404D771EF8455800A56CDE /* LeftToRightAnimationTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C404D761EF8455800A56CDE /* LeftToRightAnimationTransition.swift */; };
 		7C4193101EB29FA600FBC6AD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C41930F1EB29FA600FBC6AD /* User.swift */; };
 		7C4AB6BD1EE60883001C8834 /* AudibleLikeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4AB6BC1EE60883001C8834 /* AudibleLikeTests.swift */; };
 		7C6732D61EF201E500645DC4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7C6732D51EF201E500645DC4 /* GoogleService-Info.plist */; };
@@ -60,6 +63,9 @@
 		7C0973AB1EDCC4BB00FACC60 /* ClueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClueViewController.swift; path = Main/Detail/ClueViewController.swift; sourceTree = "<group>"; };
 		7C404D6E1EF82CE300A56CDE /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileController.swift; path = "Main/User Profle/ProfileController.swift"; sourceTree = "<group>"; };
 		7C404D701EF82D5600A56CDE /* ProfileDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileDetailCell.swift; path = "Main/User Profle/ProfileDetailCell.swift"; sourceTree = "<group>"; };
+		7C404D721EF830BA00A56CDE /* UIImage+helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+helpers.swift"; sourceTree = "<group>"; };
+		7C404D741EF838F000A56CDE /* RightToLeftAnimationTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RightToLeftAnimationTransition.swift; path = Helpers/RightToLeftAnimationTransition.swift; sourceTree = "<group>"; };
+		7C404D761EF8455800A56CDE /* LeftToRightAnimationTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftToRightAnimationTransition.swift; sourceTree = "<group>"; };
 		7C41930F1EB29FA600FBC6AD /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Models/User.swift; sourceTree = "<group>"; };
 		7C4AB6BA1EE60883001C8834 /* AudibleLikeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AudibleLikeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C4AB6BC1EE60883001C8834 /* AudibleLikeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudibleLikeTests.swift; sourceTree = "<group>"; };
@@ -306,6 +312,9 @@
 				7C9BD70E1EC13D1D003242CA /* Protocols.swift */,
 				7C71037A1EC4DCC40040CA28 /* BaseCells.swift */,
 				7C8D7F841EF2E3680061FFC0 /* CustomImageView.swift */,
+				7C404D721EF830BA00A56CDE /* UIImage+helpers.swift */,
+				7C404D741EF838F000A56CDE /* RightToLeftAnimationTransition.swift */,
+				7C404D761EF8455800A56CDE /* LeftToRightAnimationTransition.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -528,6 +537,8 @@
 				7C9BD70D1EC13060003242CA /* TextField+helpers.swift in Sources */,
 				7CF906E11EAEB7AF00A9417E /* HomeNavigationController.swift in Sources */,
 				7C9BD70F1EC13D1D003242CA /* Protocols.swift in Sources */,
+				7C404D751EF838F000A56CDE /* RightToLeftAnimationTransition.swift in Sources */,
+				7C404D731EF830BA00A56CDE /* UIImage+helpers.swift in Sources */,
 				7CF906DD1EAE765B00A9417E /* GuideCell.swift in Sources */,
 				7CF906CB1EAE6D3F00A9417E /* LoginController.swift in Sources */,
 				7C404D6F1EF82CE300A56CDE /* ProfileController.swift in Sources */,
@@ -538,6 +549,7 @@
 				7C0973A81EDC888600FACC60 /* DetailViewController.swift in Sources */,
 				7CF906DF1EAE94E300A9417E /* LoginCell.swift in Sources */,
 				7C404D711EF82D5600A56CDE /* ProfileDetailCell.swift in Sources */,
+				7C404D771EF8455800A56CDE /* LeftToRightAnimationTransition.swift in Sources */,
 				7C7103791EC3EACD0040CA28 /* FindPersonCell.swift in Sources */,
 				7CC5096B1EC26455000E869C /* HomeControllerCell.swift in Sources */,
 				7C0973AC1EDCC4BB00FACC60 /* ClueViewController.swift in Sources */,

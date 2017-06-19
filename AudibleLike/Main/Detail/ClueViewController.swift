@@ -37,6 +37,7 @@ class ClueViewController: UIViewController, UITextViewDelegate, UITextFieldDeleg
         tv.text = "Pista"
         tv.textColor = UIColor(white: 0.7, alpha: 1)
         tv.font = .systemFont(ofSize: 18)
+        tv.backgroundColor = .clear
         return tv
     }()
     
@@ -47,11 +48,10 @@ class ClueViewController: UIViewController, UITextViewDelegate, UITextFieldDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupBackground()
         clueTextView.selectedTextRange = clueTextView.textRange(from: clueTextView.beginningOfDocument, to: clueTextView.beginningOfDocument)
-        view.backgroundColor = .white
-        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.isTranslucent = true
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancelar", style: .plain, target: self, action: #selector(handleDismissClue))
-        
         navigationItem.rightBarButtonItem = sendButton
         navigationItem.title = "Nueva Pista"
         setupViews()
@@ -109,9 +109,9 @@ class ClueViewController: UIViewController, UITextViewDelegate, UITextFieldDeleg
         }
     }
     
-    // MARK: - Setup Views
+    // MARK: - Setup Methods
     
-    func setupViews() {
+    fileprivate func setupViews() {
         view.addSubview(subjectTextField)
         view.addSubview(clueTextView)
         view.addSubview(dividerLineView)
@@ -119,7 +119,7 @@ class ClueViewController: UIViewController, UITextViewDelegate, UITextFieldDeleg
         subjectTextField.snp.makeConstraints { (make) in
             make.left.equalTo(view).offset(14)
             make.right.equalTo(view).offset(-14)
-            make.top.equalTo(view).offset(8)
+            make.top.equalTo(topLayoutGuide.snp.bottom)
             make.height.equalTo(40)
         }
         subjectTextField.becomeFirstResponder()
@@ -136,6 +136,10 @@ class ClueViewController: UIViewController, UITextViewDelegate, UITextFieldDeleg
             make.left.right.equalTo(subjectTextField)
             make.bottom.equalTo(view)
         }
+    }
+    fileprivate func setupBackground() {
+        let image = #imageLiteral(resourceName: "logo").resize(width: view.frame.width)
+        view.backgroundColor = UIColor(patternImage: image!).withAlphaComponent(0.2)
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
