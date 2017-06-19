@@ -11,8 +11,8 @@
 		665FA5F5D667AB977C9C7416 /* Pods_AudibleLikeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1452CDCF80727312736C45CD /* Pods_AudibleLikeTests.framework */; };
 		7C0973A81EDC888600FACC60 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0973A71EDC888600FACC60 /* DetailViewController.swift */; };
 		7C0973AC1EDCC4BB00FACC60 /* ClueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0973AB1EDCC4BB00FACC60 /* ClueViewController.swift */; };
-		7C404D6B1EF8277700A56CDE /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C404D691EF8277700A56CDE /* ProfileController.swift */; };
-		7C404D6C1EF8277700A56CDE /* ProfileDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C404D6A1EF8277700A56CDE /* ProfileDetailCell.swift */; };
+		7C404D651EF8257A00A56CDE /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C404D641EF8257A00A56CDE /* ProfileController.swift */; };
+		7C404D671EF825B800A56CDE /* ProfileDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C404D661EF825B800A56CDE /* ProfileDetailCell.swift */; };
 		7C4193101EB29FA600FBC6AD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C41930F1EB29FA600FBC6AD /* User.swift */; };
 		7C4AB6BD1EE60883001C8834 /* AudibleLikeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4AB6BC1EE60883001C8834 /* AudibleLikeTests.swift */; };
 		7C6732D61EF201E500645DC4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7C6732D51EF201E500645DC4 /* GoogleService-Info.plist */; };
@@ -58,8 +58,8 @@
 		4FB8BF50F9FD7FE91C725190 /* Pods-AudibleLike.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudibleLike.release.xcconfig"; path = "Pods/Target Support Files/Pods-AudibleLike/Pods-AudibleLike.release.xcconfig"; sourceTree = "<group>"; };
 		7C0973A71EDC888600FACC60 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = AudibleLike/Main/Detail/DetailViewController.swift; sourceTree = "<group>"; };
 		7C0973AB1EDCC4BB00FACC60 /* ClueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClueViewController.swift; path = AudibleLike/Main/Detail/ClueViewController.swift; sourceTree = "<group>"; };
-		7C404D691EF8277700A56CDE /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
-		7C404D6A1EF8277700A56CDE /* ProfileDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileDetailCell.swift; sourceTree = "<group>"; };
+		7C404D641EF8257A00A56CDE /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		7C404D661EF825B800A56CDE /* ProfileDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileDetailCell.swift; sourceTree = "<group>"; };
 		7C41930F1EB29FA600FBC6AD /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Models/User.swift; sourceTree = "<group>"; };
 		7C4AB6BA1EE60883001C8834 /* AudibleLikeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AudibleLikeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C4AB6BC1EE60883001C8834 /* AudibleLikeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudibleLikeTests.swift; sourceTree = "<group>"; };
@@ -156,12 +156,13 @@
 			path = Main/Detail;
 			sourceTree = "<group>";
 		};
-		7C404D681EF8277700A56CDE /* ProfileOld */ = {
+		7C404D631EF8255B00A56CDE /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				7C404D691EF8277700A56CDE /* ProfileController.swift */,
-				7C404D6A1EF8277700A56CDE /* ProfileDetailCell.swift */,
+				7C404D641EF8257A00A56CDE /* ProfileController.swift */,
+				7C404D661EF825B800A56CDE /* ProfileDetailCell.swift */,
 			);
+			name = Profile;
 			path = ProfileOld;
 			sourceTree = "<group>";
 		};
@@ -178,7 +179,7 @@
 		7C4193111EB3E94300FBC6AD /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				7C404D681EF8277700A56CDE /* ProfileOld */,
+				7C404D631EF8255B00A56CDE /* Profile */,
 				7C8D7F871EF2ED090061FFC0 /* Map */,
 				7C8D7F861EF2ECE10061FFC0 /* Report */,
 				7C0973A61EDC87B900FACC60 /* Detail */,
@@ -526,7 +527,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C404D6B1EF8277700A56CDE /* ProfileController.swift in Sources */,
+				7C404D651EF8257A00A56CDE /* ProfileController.swift in Sources */,
 				7CF906E31EAED4CD00A9417E /* UserDefaults+helpers.swift in Sources */,
 				7C8D7F851EF2E3680061FFC0 /* CustomImageView.swift in Sources */,
 				7C7103771EC3D9DB0040CA28 /* SearchTableViewController.swift in Sources */,
@@ -548,7 +549,7 @@
 				7C71037B1EC4DCC40040CA28 /* BaseCells.swift in Sources */,
 				7CF906DB1EAE6EC600A9417E /* Page.swift in Sources */,
 				7C4193101EB29FA600FBC6AD /* User.swift in Sources */,
-				7C404D6C1EF8277700A56CDE /* ProfileDetailCell.swift in Sources */,
+				7C404D671EF825B800A56CDE /* ProfileDetailCell.swift in Sources */,
 				7C8D7F8B1EF30CF60061FFC0 /* ReportController.swift in Sources */,
 				7C8D7F891EF2F0460061FFC0 /* MapController.swift in Sources */,
 				7CF906C91EAE6D3F00A9417E /* AppDelegate.swift in Sources */,
