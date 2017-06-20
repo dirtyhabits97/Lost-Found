@@ -11,6 +11,7 @@ import SnapKit
 
 class ClueViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate {
     
+    
     var lostPerson: Lost!
     
     let dividerLineView: UIView = {
@@ -98,7 +99,7 @@ class ClueViewController: UIViewController, UITextViewDelegate, UITextFieldDeleg
         guard let user = UserDefaults.standard.unarchiveUser().username else { return }
         let lostPerson = self.lostPerson.dni
         
-        Service.sharedInstance.sendClueFor(lostPerson, from: user, subject, detail) { (result) in
+        Service.sharedInstance.sendClue(for: lostPerson, from: user, subject, detail) { (result) in
             let title = result == false ? "Se produjo un error al enviar la pista" : "Pista Enviada"
             let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
             self.present(alert, animated: true) {

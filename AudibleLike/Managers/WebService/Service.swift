@@ -105,7 +105,7 @@ struct Service {
             }
         }.resume()
     }
-    func sendClueFor(_ idLostPerson: String, from idUser: String, _ subject: String, _ detail: String, completion: @escaping (Bool)->()) {
+    func sendClue(for idLostPerson: String, from idUser: String, _ subject: String, _ detail: String, completion: @escaping (Bool)->()) {
         let params = ["idUsuario":idUser, "idPerdido":idLostPerson, "asunto":subject, "descripcion":detail]
         guard let (request, session) = doRequest(params: params, resource: .clue) else { return }
         session.dataTask(with: request) { (data, response, error) in
@@ -119,6 +119,23 @@ struct Service {
             let credential = Credential(dictionary: dictionary)
             DispatchQueue.main.async {
                 print(credential.result)
+                completion(credential.result)
+            }
+        }.resume()
+    }
+    func sendReport(from idUser: String, for idLostPerson: String, name: String, _ report: String, completion: @escaping (Bool) -> ()) {
+        let param = ["idUsuario":idUser, "idLostPerson":idLostPerson, "nombre":name, "report":report]
+        guard let (request, session) = doRequest(params: param, resource: .report) else { return }
+        session.dataTask(with: request) { (data, response, error) in
+            if let err = error {
+                print("Failed to receive result from sending report: ", err)
+                return
+            }
+            guard let data = data else { return }
+            let dataDictionary = try? JSONSerialization.jsonObject(with: data, options: [])
+            guard let dictionary = dataDictionary as? [String:Any] else { return }
+            let credential = Credential(dictionary: dictionary)
+            DispatchQueue.main.async {
                 completion(credential.result)
             }
         }.resume()
