@@ -186,9 +186,9 @@ extension LoginController {
     }
     
     func finishRegister(_ name: String, _ username:String, _ password:String) {
-        Service.sharedInstance.fetchRegisterResult(name, username, password) { (reslt) in
-            print("The result was:" , reslt)
-            switch reslt{
+        Service.sharedInstance.fetchRegisterResult(name, username, password) { (result) in
+            print("The result was:" , result)
+            switch result{
             case false:
                 let alert = UIAlertController(title: "Error", message: "Se ha producido un error", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))

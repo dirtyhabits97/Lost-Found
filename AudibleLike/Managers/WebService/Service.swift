@@ -44,7 +44,7 @@ struct Service {
         if !items.isEmpty {
             urlComp?.queryItems = queryItems
         }
-        guard let url = urlComp?.url else { return nil}
+        guard let url = urlComp?.url else { return nil }
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = resource.httpMethod
         let session = URLSession(configuration: URLSessionConfiguration.default)
