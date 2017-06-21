@@ -29,31 +29,46 @@ struct Service {
         var httpMethod: String {
             switch self {
             case .list, .login, .test: return "GET"
-            case .register, .clue, .report: return "GET" //"POST"
+            case .register, .clue, .report: return "POST"
             }
         }
     }
-    
-    fileprivate func doRequest(params: [String:String], resource: Resource) -> (URLRequest, URLSession)? {
-        let urlComp = NSURLComponents(string: baseUrl + resource.path)
-        var items = [URLQueryItem]()
-        for (key, value) in params {
-            items.append(URLQueryItem(name: key, value: value))
+    fileprivate class RequestManager {
+        let params: [String:Any]
+        let resource: Resource
+        init(params: [String:Any], resource: Resource) {
+            self.params = params
+            self.resource = resource
         }
-        let queryItems = items.filter { !$0.name.isEmpty }
-        if !items.isEmpty {
-            urlComp?.queryItems = queryItems
+        func doRequest() -> (URLRequest, URLSession)? {
+            let urlComp = NSURLComponents(string: Service.sharedInstance.baseUrl + resource.path)
+            if resource.httpMethod == "GET" {
+                var items = [URLQueryItem]()
+                for (key, value) in params {
+                    items.append(URLQueryItem(name: key, value: String(describing: value)))
+                }
+                let queryItems = items.filter { !$0.name.isEmpty }
+                if !items.isEmpty {
+                    urlComp?.queryItems = queryItems
+                }
+            }
+            guard let url = urlComp?.url else { return nil }
+            var urlRequest = URLRequest(url: url)
+            urlRequest.httpMethod = resource.httpMethod
+            if resource.httpMethod == "POST" {
+                urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+                urlRequest.addValue("application/json", forHTTPHeaderField: "Accept")
+                urlRequest.httpBody = try? JSONSerialization.data(withJSONObject: params, options: [])
+            }
+            let session = URLSession(configuration: URLSessionConfiguration.default)
+            return(urlRequest, session)
         }
-        guard let url = urlComp?.url else { return nil }
-        var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = resource.httpMethod
-        let session = URLSession(configuration: URLSessionConfiguration.default)
-        return(urlRequest, session)
     }
     
     func fetchRegisterResult(_ name: String, _ username:String, _ password:String, completion: @escaping (Bool)->()) {
         let params = ["name":name, "username":username, "password":password]
-        guard let (request, session) = doRequest(params: params, resource: .register) else { return }
+        let requestManager = RequestManager(params: params, resource: .register)
+        guard let (request, session) = requestManager.doRequest() else { return }
         session.dataTask(with: request) { (data, response, error) in
             if let err = error {
                 print("Failed to receive result from register: ", err)
@@ -70,9 +85,8 @@ struct Service {
     }
     func fetchLogged(_ username:String, _ password:String, completion: @escaping (User)->()) {
         let params = ["username":username, "password":password]
-        guard let (request, session) = doRequest(params: params, resource: .login) else {
-            return
-        }
+        let requestManager = RequestManager(params: params, resource: .login)
+        guard let (request, session) = requestManager.doRequest() else { return }
         session.dataTask(with: request) { (data, response, error) in
             if let err = error {
                 print("Failed to do login: ", err)
@@ -89,7 +103,8 @@ struct Service {
     }
     func fetchCategories(completion: @escaping ([LostCategory])->()) {
         let params = [String:String]()
-        guard let (request, session) = doRequest(params: params, resource: .list) else { return }
+        let requestManager = RequestManager(params: params, resource: .list)
+        guard let (request, session) = requestManager.doRequest() else { return }
         session.dataTask(with: request) { (data, response, error) in
             if let err = error {
                 print("Failed to fetch categories: ", err)
@@ -107,7 +122,8 @@ struct Service {
     }
     func sendClue(for idLostPerson: String, from idUser: String, _ subject: String, _ detail: String, completion: @escaping (Bool)->()) {
         let params = ["idUsuario":idUser, "idPerdido":idLostPerson, "asunto":subject, "descripcion":detail]
-        guard let (request, session) = doRequest(params: params, resource: .clue) else { return }
+        let requestManager = RequestManager(params: params, resource: .clue)
+        guard let (request, session) = requestManager.doRequest() else { return }
         session.dataTask(with: request) { (data, response, error) in
             if let err = error {
                 print("Failed to receive result from sending clue: ", err)
@@ -124,8 +140,9 @@ struct Service {
         }.resume()
     }
     func sendReport(from idUser: String, for idLostPerson: String, name: String, _ report: String, completion: @escaping (Bool) -> ()) {
-        let param = ["idUsuario":idUser, "idLostPerson":idLostPerson, "nombre":name, "report":report]
-        guard let (request, session) = doRequest(params: param, resource: .report) else { return }
+        let params = ["idUsuario":idUser, "idLostPerson":idLostPerson, "nombre":name, "report":report]
+        let requestManager = RequestManager(params: params, resource: .report)
+        guard let (request, session) = requestManager.doRequest() else { return }
         session.dataTask(with: request) { (data, response, error) in
             if let err = error {
                 print("Failed to receive result from sending report: ", err)
