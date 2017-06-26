@@ -16,12 +16,17 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>7</integer>
+			<integer>1</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>7C4AB6B91EE60883001C8834</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7C7F93A01F01478400DFFEA5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
