@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A79CCB1D4DD3B83D6B76AF7 /* Pods_AudibleLikeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31E97DA21638A07039D90038 /* Pods_AudibleLikeTests.framework */; };
+		37D51297EDF779672E5B3890 /* Pods_AudibleLike.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53E1F117A292154C92214086 /* Pods_AudibleLike.framework */; };
 		4171BD971EB5A0F900C6C6DD /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4171BD961EB5A0F900C6C6DD /* Service.swift */; };
-		665FA5F5D667AB977C9C7416 /* Pods_AudibleLikeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1452CDCF80727312736C45CD /* Pods_AudibleLikeTests.framework */; };
+		41D8CCBE1EFF299200DFFB63 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D8CCBD1EFF299200DFFB63 /* RequestManager.swift */; };
 		7C0973A81EDC888600FACC60 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0973A71EDC888600FACC60 /* DetailViewController.swift */; };
 		7C0973AC1EDCC4BB00FACC60 /* ClueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0973AB1EDCC4BB00FACC60 /* ClueViewController.swift */; };
 		7C404D6F1EF82CE300A56CDE /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C404D6E1EF82CE300A56CDE /* ProfileController.swift */; };
@@ -22,6 +24,7 @@
 		7C7103771EC3D9DB0040CA28 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7103761EC3D9DB0040CA28 /* SearchTableViewController.swift */; };
 		7C7103791EC3EACD0040CA28 /* FindPersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7103781EC3EACD0040CA28 /* FindPersonCell.swift */; };
 		7C71037B1EC4DCC40040CA28 /* BaseCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C71037A1EC4DCC40040CA28 /* BaseCells.swift */; };
+		7C7F93A41F01478400DFFEA5 /* UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7F93A31F01478400DFFEA5 /* UITests.swift */; };
 		7C8D7F851EF2E3680061FFC0 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8D7F841EF2E3680061FFC0 /* CustomImageView.swift */; };
 		7C8D7F891EF2F0460061FFC0 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8D7F881EF2F0460061FFC0 /* MapController.swift */; };
 		7C8D7F8B1EF30CF60061FFC0 /* ReportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8D7F8A1EF30CF60061FFC0 /* ReportController.swift */; };
@@ -41,7 +44,6 @@
 		7CF906E11EAEB7AF00A9417E /* HomeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF906E01EAEB7AF00A9417E /* HomeNavigationController.swift */; };
 		7CF906E31EAED4CD00A9417E /* UserDefaults+helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF906E21EAED4CD00A9417E /* UserDefaults+helpers.swift */; };
 		7CF906E81EAED75600A9417E /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF906E71EAED75600A9417E /* HomeController.swift */; };
-		F58621C7C1EFE6A91470D53D /* Pods_AudibleLike.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB743C510454D2AD383C7C07 /* Pods_AudibleLike.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,12 +54,22 @@
 			remoteGlobalIDString = 7CF906C41EAE6D3F00A9417E;
 			remoteInfo = AudibleLike;
 		};
+		7C7F93A61F01478400DFFEA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7CF906BD1EAE6D3F00A9417E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7CF906C41EAE6D3F00A9417E;
+			remoteInfo = AudibleLike;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1452CDCF80727312736C45CD /* Pods_AudibleLikeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AudibleLikeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		31E97DA21638A07039D90038 /* Pods_AudibleLikeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AudibleLikeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4171BD961EB5A0F900C6C6DD /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Service.swift; path = Managers/WebService/Service.swift; sourceTree = "<group>"; };
-		4FB8BF50F9FD7FE91C725190 /* Pods-AudibleLike.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudibleLike.release.xcconfig"; path = "Pods/Target Support Files/Pods-AudibleLike/Pods-AudibleLike.release.xcconfig"; sourceTree = "<group>"; };
+		41D8CCBD1EFF299200DFFB63 /* RequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestManager.swift; path = Managers/WebService/RequestManager.swift; sourceTree = "<group>"; };
+		53E1F117A292154C92214086 /* Pods_AudibleLike.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AudibleLike.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A4DD5A193C88D49312CD694 /* Pods-AudibleLike.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudibleLike.release.xcconfig"; path = "Pods/Target Support Files/Pods-AudibleLike/Pods-AudibleLike.release.xcconfig"; sourceTree = "<group>"; };
+		62722E8D4DDA05BE6D7F84A8 /* Pods-AudibleLikeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudibleLikeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AudibleLikeTests/Pods-AudibleLikeTests.release.xcconfig"; sourceTree = "<group>"; };
 		7C0973A71EDC888600FACC60 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = Main/Detail/DetailViewController.swift; sourceTree = "<group>"; };
 		7C0973AB1EDCC4BB00FACC60 /* ClueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClueViewController.swift; path = Main/Detail/ClueViewController.swift; sourceTree = "<group>"; };
 		7C404D6E1EF82CE300A56CDE /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileController.swift; path = "Main/User Profle/ProfileController.swift"; sourceTree = "<group>"; };
@@ -74,6 +86,9 @@
 		7C7103761EC3D9DB0040CA28 /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchTableViewController.swift; path = Main/Search/SearchTableViewController.swift; sourceTree = "<group>"; };
 		7C7103781EC3EACD0040CA28 /* FindPersonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FindPersonCell.swift; path = Main/Search/FindPersonCell.swift; sourceTree = "<group>"; };
 		7C71037A1EC4DCC40040CA28 /* BaseCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseCells.swift; path = Helpers/BaseCells.swift; sourceTree = "<group>"; };
+		7C7F93A11F01478400DFFEA5 /* UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C7F93A31F01478400DFFEA5 /* UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITests.swift; sourceTree = "<group>"; };
+		7C7F93A51F01478400DFFEA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C8198841ED7401C00F32812 /* MyExtensions.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MyExtensions.framework; path = "../../../../Users/gonzaloreyes/Library/Developer/Xcode/DerivedData/AudibleLike-gatvxdvjcthsgjalrrirlocbuvam/Build/Products/Debug-iphoneos/MyExtensions/MyExtensions.framework"; sourceTree = "<group>"; };
 		7C8D7F841EF2E3680061FFC0 /* CustomImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		7C8D7F881EF2F0460061FFC0 /* MapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapController.swift; path = Main/Map/MapController.swift; sourceTree = "<group>"; };
@@ -96,10 +111,8 @@
 		7CF906E01EAEB7AF00A9417E /* HomeNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeNavigationController.swift; path = Main/Home/HomeNavigationController.swift; sourceTree = "<group>"; };
 		7CF906E21EAED4CD00A9417E /* UserDefaults+helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UserDefaults+helpers.swift"; path = "Helpers/UserDefaults+helpers.swift"; sourceTree = "<group>"; };
 		7CF906E71EAED75600A9417E /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeController.swift; path = Main/Home/HomeController.swift; sourceTree = "<group>"; };
-		9890D0C469D2FC847D14F56B /* Pods-AudibleLikeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudibleLikeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AudibleLikeTests/Pods-AudibleLikeTests.debug.xcconfig"; sourceTree = "<group>"; };
-		AB0DD33F7A24B3E96BF7B724 /* Pods-AudibleLikeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudibleLikeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AudibleLikeTests/Pods-AudibleLikeTests.release.xcconfig"; sourceTree = "<group>"; };
-		F77E25E883A2707C35783B58 /* Pods-AudibleLike.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudibleLike.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AudibleLike/Pods-AudibleLike.debug.xcconfig"; sourceTree = "<group>"; };
-		FB743C510454D2AD383C7C07 /* Pods_AudibleLike.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AudibleLike.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		91CB57F4C638157D42BA6C2D /* Pods-AudibleLikeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudibleLikeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AudibleLikeTests/Pods-AudibleLikeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F7F172DDAFC2F65CE4A607CB /* Pods-AudibleLike.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudibleLike.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AudibleLike/Pods-AudibleLike.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +120,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				665FA5F5D667AB977C9C7416 /* Pods_AudibleLikeTests.framework in Frameworks */,
+				0A79CCB1D4DD3B83D6B76AF7 /* Pods_AudibleLikeTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7C7F939E1F01478400DFFEA5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,28 +135,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F58621C7C1EFE6A91470D53D /* Pods_AudibleLike.framework in Frameworks */,
+				37D51297EDF779672E5B3890 /* Pods_AudibleLike.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		03118049215770C4FB9ED7EF /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				F77E25E883A2707C35783B58 /* Pods-AudibleLike.debug.xcconfig */,
-				4FB8BF50F9FD7FE91C725190 /* Pods-AudibleLike.release.xcconfig */,
-				9890D0C469D2FC847D14F56B /* Pods-AudibleLikeTests.debug.xcconfig */,
-				AB0DD33F7A24B3E96BF7B724 /* Pods-AudibleLikeTests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		4171BD951EB5A0E600C6C6DD /* WebService */ = {
 			isa = PBXGroup;
 			children = (
 				4171BD961EB5A0F900C6C6DD /* Service.swift */,
+				41D8CCBD1EFF299200DFFB63 /* RequestManager.swift */,
 			);
 			name = WebService;
 			sourceTree = "<group>";
@@ -145,8 +155,8 @@
 			isa = PBXGroup;
 			children = (
 				7C8198841ED7401C00F32812 /* MyExtensions.framework */,
-				FB743C510454D2AD383C7C07 /* Pods_AudibleLike.framework */,
-				1452CDCF80727312736C45CD /* Pods_AudibleLikeTests.framework */,
+				53E1F117A292154C92214086 /* Pods_AudibleLike.framework */,
+				31E97DA21638A07039D90038 /* Pods_AudibleLikeTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -205,6 +215,7 @@
 		7C4AB6C41EE61798001C8834 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				7C7F93A21F01478400DFFEA5 /* UI */,
 				7C4AB6BB1EE60883001C8834 /* Unit */,
 			);
 			name = Tests;
@@ -217,6 +228,16 @@
 				7C7103781EC3EACD0040CA28 /* FindPersonCell.swift */,
 			);
 			name = Search;
+			sourceTree = "<group>";
+		};
+		7C7F93A21F01478400DFFEA5 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				7C7F93A31F01478400DFFEA5 /* UITests.swift */,
+				7C7F93A51F01478400DFFEA5 /* Info.plist */,
+			);
+			name = UI;
+			path = UITests;
 			sourceTree = "<group>";
 		};
 		7C8D7F861EF2ECE10061FFC0 /* Report */ = {
@@ -249,8 +270,8 @@
 				7C4AB6C41EE61798001C8834 /* Tests */,
 				7CF906C71EAE6D3F00A9417E /* AudibleLike */,
 				7CF906C61EAE6D3F00A9417E /* Products */,
-				03118049215770C4FB9ED7EF /* Pods */,
 				6124F0F8307D55BB1C703F15 /* Frameworks */,
+				BFC95D6F5E8FE8831EAF8D42 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -259,6 +280,7 @@
 			children = (
 				7CF906C51EAE6D3F00A9417E /* AudibleLike.app */,
 				7C4AB6BA1EE60883001C8834 /* AudibleLikeTests.xctest */,
+				7C7F93A11F01478400DFFEA5 /* UITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -318,6 +340,17 @@
 			name = Helpers;
 			sourceTree = "<group>";
 		};
+		BFC95D6F5E8FE8831EAF8D42 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F7F172DDAFC2F65CE4A607CB /* Pods-AudibleLike.debug.xcconfig */,
+				5A4DD5A193C88D49312CD694 /* Pods-AudibleLike.release.xcconfig */,
+				91CB57F4C638157D42BA6C2D /* Pods-AudibleLikeTests.debug.xcconfig */,
+				62722E8D4DDA05BE6D7F84A8 /* Pods-AudibleLikeTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -325,12 +358,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7C4AB6C31EE60884001C8834 /* Build configuration list for PBXNativeTarget "AudibleLikeTests" */;
 			buildPhases = (
-				665B8A74CFB0946AB5C34A2F /* [CP] Check Pods Manifest.lock */,
+				64664CBEAE67D3965E5E8E47 /* [CP] Check Pods Manifest.lock */,
 				7C4AB6B61EE60883001C8834 /* Sources */,
 				7C4AB6B71EE60883001C8834 /* Frameworks */,
 				7C4AB6B81EE60883001C8834 /* Resources */,
-				8FE1AC743970EC5B23CEAC99 /* [CP] Embed Pods Frameworks */,
-				705C0BC79F162447BD998B3A /* [CP] Copy Pods Resources */,
+				C726AF7FAC787E554465F1A5 /* [CP] Embed Pods Frameworks */,
+				2189819F924E3A77646C800C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -342,16 +375,34 @@
 			productReference = 7C4AB6BA1EE60883001C8834 /* AudibleLikeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		7C7F93A01F01478400DFFEA5 /* UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7C7F93AA1F01478400DFFEA5 /* Build configuration list for PBXNativeTarget "UITests" */;
+			buildPhases = (
+				7C7F939D1F01478400DFFEA5 /* Sources */,
+				7C7F939E1F01478400DFFEA5 /* Frameworks */,
+				7C7F939F1F01478400DFFEA5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7C7F93A71F01478400DFFEA5 /* PBXTargetDependency */,
+			);
+			name = UITests;
+			productName = UITests;
+			productReference = 7C7F93A11F01478400DFFEA5 /* UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		7CF906C41EAE6D3F00A9417E /* AudibleLike */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7CF906D71EAE6D4000A9417E /* Build configuration list for PBXNativeTarget "AudibleLike" */;
 			buildPhases = (
-				8BE39CE05F226E8DE574AE29 /* [CP] Check Pods Manifest.lock */,
+				3456E8184C720F1A6ED9A33E /* [CP] Check Pods Manifest.lock */,
 				7CF906C11EAE6D3F00A9417E /* Sources */,
 				7CF906C21EAE6D3F00A9417E /* Frameworks */,
 				7CF906C31EAE6D3F00A9417E /* Resources */,
-				88E546B220178C9FF23B4644 /* [CP] Embed Pods Frameworks */,
-				E27E09505CCB78F682D0773D /* [CP] Copy Pods Resources */,
+				D18607CAF1AADAA2057EF506 /* [CP] Embed Pods Frameworks */,
+				710E6DE9A52192FD92C70F5D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -377,6 +428,12 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 7CF906C41EAE6D3F00A9417E;
 					};
+					7C7F93A01F01478400DFFEA5 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 4D3BQQ6A8Z;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 7CF906C41EAE6D3F00A9417E;
+					};
 					7CF906C41EAE6D3F00A9417E = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = P8J2DS2Z2V;
@@ -399,12 +456,20 @@
 			targets = (
 				7CF906C41EAE6D3F00A9417E /* AudibleLike */,
 				7C4AB6B91EE60883001C8834 /* AudibleLikeTests */,
+				7C7F93A01F01478400DFFEA5 /* UITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		7C4AB6B81EE60883001C8834 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7C7F939F1F01478400DFFEA5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -425,22 +490,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		665B8A74CFB0946AB5C34A2F /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		705C0BC79F162447BD998B3A /* [CP] Copy Pods Resources */ = {
+		2189819F924E3A77646C800C /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -455,22 +505,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AudibleLikeTests/Pods-AudibleLikeTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		88E546B220178C9FF23B4644 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AudibleLike/Pods-AudibleLike-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8BE39CE05F226E8DE574AE29 /* [CP] Check Pods Manifest.lock */ = {
+		3456E8184C720F1A6ED9A33E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -485,22 +520,22 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		8FE1AC743970EC5B23CEAC99 /* [CP] Embed Pods Frameworks */ = {
+		64664CBEAE67D3965E5E8E47 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AudibleLikeTests/Pods-AudibleLikeTests-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		E27E09505CCB78F682D0773D /* [CP] Copy Pods Resources */ = {
+		710E6DE9A52192FD92C70F5D /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -515,6 +550,36 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AudibleLike/Pods-AudibleLike-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C726AF7FAC787E554465F1A5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AudibleLikeTests/Pods-AudibleLikeTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D18607CAF1AADAA2057EF506 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AudibleLike/Pods-AudibleLike-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -522,6 +587,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7C7F939D1F01478400DFFEA5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C7F93A41F01478400DFFEA5 /* UITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,6 +617,7 @@
 				7C9BD7111EC146E6003242CA /* Lost.swift in Sources */,
 				7CC5096D1EC26DD7000E869C /* LostPersonCell.swift in Sources */,
 				7CF906E81EAED75600A9417E /* HomeController.swift in Sources */,
+				41D8CCBE1EFF299200DFFB63 /* RequestManager.swift in Sources */,
 				7C0973A81EDC888600FACC60 /* DetailViewController.swift in Sources */,
 				7CF906DF1EAE94E300A9417E /* LoginCell.swift in Sources */,
 				7C404D711EF82D5600A56CDE /* ProfileDetailCell.swift in Sources */,
@@ -569,6 +643,11 @@
 			target = 7CF906C41EAE6D3F00A9417E /* AudibleLike */;
 			targetProxy = 7C4AB6BF1EE60883001C8834 /* PBXContainerItemProxy */;
 		};
+		7C7F93A71F01478400DFFEA5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7CF906C41EAE6D3F00A9417E /* AudibleLike */;
+			targetProxy = 7C7F93A61F01478400DFFEA5 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -593,7 +672,7 @@
 /* Begin XCBuildConfiguration section */
 		7C4AB6C11EE60884001C8834 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9890D0C469D2FC847D14F56B /* Pods-AudibleLikeTests.debug.xcconfig */;
+			baseConfigurationReference = 91CB57F4C638157D42BA6C2D /* Pods-AudibleLikeTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -609,7 +688,7 @@
 		};
 		7C4AB6C21EE60884001C8834 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AB0DD33F7A24B3E96BF7B724 /* Pods-AudibleLikeTests.release.xcconfig */;
+			baseConfigurationReference = 62722E8D4DDA05BE6D7F84A8 /* Pods-AudibleLikeTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -620,6 +699,36 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AudibleLike.app/AudibleLike";
+			};
+			name = Release;
+		};
+		7C7F93A81F01478400DFFEA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = 4D3BQQ6A8Z;
+				INFOPLIST_FILE = UITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = pe.edu.ulima.UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = AudibleLike;
+			};
+			name = Debug;
+		};
+		7C7F93A91F01478400DFFEA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = 4D3BQQ6A8Z;
+				INFOPLIST_FILE = UITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = pe.edu.ulima.UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = AudibleLike;
 			};
 			name = Release;
 		};
@@ -718,7 +827,7 @@
 		};
 		7CF906D81EAE6D4000A9417E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F77E25E883A2707C35783B58 /* Pods-AudibleLike.debug.xcconfig */;
+			baseConfigurationReference = F7F172DDAFC2F65CE4A607CB /* Pods-AudibleLike.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = P8J2DS2Z2V;
@@ -732,7 +841,7 @@
 		};
 		7CF906D91EAE6D4000A9417E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4FB8BF50F9FD7FE91C725190 /* Pods-AudibleLike.release.xcconfig */;
+			baseConfigurationReference = 5A4DD5A193C88D49312CD694 /* Pods-AudibleLike.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = P8J2DS2Z2V;
@@ -755,6 +864,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		7C7F93AA1F01478400DFFEA5 /* Build configuration list for PBXNativeTarget "UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7C7F93A81F01478400DFFEA5 /* Debug */,
+				7C7F93A91F01478400DFFEA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		7CF906C01EAE6D3F00A9417E /* Build configuration list for PBXProject "AudibleLike" */ = {
 			isa = XCConfigurationList;
