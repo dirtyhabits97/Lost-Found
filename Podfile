@@ -8,7 +8,6 @@ target 'AudibleLike' do
   # Pods for AudibleLike
   pod 'SnapKit', '~> 3.2.0'
   pod 'AlamofireImage', '~> 3.1'
-  pod 'Firebase/Storage'
 
 end
 
@@ -17,6 +16,5 @@ target 'AudibleLikeTests' do
     use_frameworks!
     
     # Pods for AudibleLikeTests
-    pod 'Firebase/Storage'
     
 end
