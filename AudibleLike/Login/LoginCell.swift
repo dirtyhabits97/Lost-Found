@@ -30,6 +30,7 @@ class LoginCell: UICollectionViewCell, UITextFieldDelegate {
     lazy var emailTextField: PaddedTextField = {
         let textField = PaddedTextField()
         textField.delegate = self
+        textField.autocorrectionType = .no
         textField.placeholder = "Usuario"
         textField.keyboardType = .emailAddress
         textField.layer.borderColor = UIColor.lightGray.cgColor
@@ -42,6 +43,7 @@ class LoginCell: UICollectionViewCell, UITextFieldDelegate {
     lazy var passwordTextField: PaddedTextField = {
         let textField = PaddedTextField()
         textField.placeholder = "Contraseña"
+        textField.autocorrectionType = .no
         textField.delegate = self
         textField.isSecureTextEntry = true
         textField.layer.borderColor = UIColor.lightGray.cgColor
@@ -53,6 +55,7 @@ class LoginCell: UICollectionViewCell, UITextFieldDelegate {
     
     lazy var nameTextField: PaddedTextField = {
         let textField = PaddedTextField()
+        textField.autocorrectionType = .no
         textField.isHidden = true
         textField.delegate = self
         textField.placeholder = "Nombre"

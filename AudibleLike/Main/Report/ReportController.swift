@@ -28,6 +28,7 @@ class ReportController: UIViewController {
         tf.layer.borderColor = UIColor.lightGray.cgColor
         tf.layer.borderWidth = 1
         tf.returnKeyType = .done
+        tf.isAccessibilityElement = true
         return tf
     }()
     lazy var nameTextField: PaddedTextField = {
@@ -38,6 +39,7 @@ class ReportController: UIViewController {
         tf.layer.borderColor = UIColor.lightGray.cgColor
         tf.layer.borderWidth = 1
         tf.returnKeyType = .done
+        tf.isAccessibilityElement = true
         return tf
     }()
     lazy var reportTextView: UITextView = {
@@ -88,6 +90,7 @@ class ReportController: UIViewController {
         stackView.axis = .vertical
         stackView.distribution = .fillEqually
         stackView.spacing = 8
+        stackView.isAccessibilityElement = true
         
         view.addSubview(stackView)
         view.addSubview(reportTextView)
