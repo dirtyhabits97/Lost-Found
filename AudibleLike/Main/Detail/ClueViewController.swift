@@ -96,11 +96,11 @@ class ClueViewController: UIViewController, UITextViewDelegate, UITextFieldDeleg
             present(alert, animated: true)
             return
         }
-        guard let user = UserDefaults.standard.unarchiveUser().username else { return }
+        let user = UserDefaults.standard.unarchiveUser().username
         let lostPerson = self.lostPerson.dni
         
         Service.sharedInstance.sendClue(for: lostPerson, from: user, subject, detail) { (result) in
-            let title = result == false ? "Se produjo un error al enviar la pista" : "Pista Enviada"
+            let title = result == false ? "Se produjo un error al enviar la pista" : "Pista Enviada!"
             let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
             self.present(alert, animated: true) {
                 self.dismiss(animated: true, completion: {

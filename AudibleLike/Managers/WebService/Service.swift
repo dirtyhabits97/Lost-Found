@@ -10,61 +10,32 @@ import Foundation
 
 struct Service {
     
-    fileprivate let baseUrl = "https://lostnf.herokuapp.com"
+    var baseUrl: String {
+        return "https://lostnf.herokuapp.com"
+    }
     
     static let sharedInstance = Service()
     
-    fileprivate enum Resource {
+    enum Resource {
         case login, register, list, clue, report, test
         var path: String {
             switch self{
-            case .login: return "/login"
-            case .register: return "/register"
+            case .login: return "/login/"
+            case .register: return "/register/"
             case .list: return "/list"
-            case .clue: return "/clue"
-            case .report: return "/report"
+            case .clue: return "/clue/"
+            case .report: return "/report/"
             case .test: return "/test"
             }
         }
         var httpMethod: String {
             switch self {
-            case .list, .login, .test: return "GET"
-            case .register, .clue, .report: return "POST"
+            case .list, .test: return "GET"
+            case .register,.login ,.clue, .report: return "POST"
             }
         }
     }
-    fileprivate class RequestManager {
-        let params: [String:Any]
-        let resource: Resource
-        init(params: [String:Any], resource: Resource) {
-            self.params = params
-            self.resource = resource
-        }
-        func doRequest() -> (URLRequest, URLSession)? {
-            let urlComp = NSURLComponents(string: Service.sharedInstance.baseUrl + resource.path)
-            if resource.httpMethod == "GET" {
-                var items = [URLQueryItem]()
-                for (key, value) in params {
-                    items.append(URLQueryItem(name: key, value: String(describing: value)))
-                }
-                let queryItems = items.filter { !$0.name.isEmpty }
-                if !items.isEmpty {
-                    urlComp?.queryItems = queryItems
-                }
-            }
-            guard let url = urlComp?.url else { return nil }
-            var urlRequest = URLRequest(url: url)
-            urlRequest.httpMethod = resource.httpMethod
-            if resource.httpMethod == "POST" {
-                urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
-                urlRequest.addValue("application/json", forHTTPHeaderField: "Accept")
-                urlRequest.httpBody = try? JSONSerialization.data(withJSONObject: params, options: [])
-            }
-            let session = URLSession(configuration: URLSessionConfiguration.default)
-            return(urlRequest, session)
-        }
-    }
-    
+       
     func fetchRegisterResult(_ name: String, _ username:String, _ password:String, completion: @escaping (Bool)->()) {
         let params = ["name":name, "username":username, "password":password]
         let requestManager = RequestManager(params: params, resource: .register)
@@ -83,6 +54,7 @@ struct Service {
             }
         }.resume()
     }
+    
     func fetchLogged(_ username:String, _ password:String, completion: @escaping (User)->()) {
         let params = ["username":username, "password":password]
         let requestManager = RequestManager(params: params, resource: .login)
@@ -98,9 +70,12 @@ struct Service {
             let user = User(dictionary: dictionary)
             DispatchQueue.main.async {
                 completion(user)
+//                gonzalorehu
+                
             }
         }.resume()
     }
+    
     func fetchCategories(completion: @escaping ([LostCategory])->()) {
         let params = [String:String]()
         let requestManager = RequestManager(params: params, resource: .list)
@@ -120,8 +95,9 @@ struct Service {
             }
         }.resume()
     }
+    
     func sendClue(for idLostPerson: String, from idUser: String, _ subject: String, _ detail: String, completion: @escaping (Bool)->()) {
-        let params = ["idUsuario":idUser, "idPerdido":idLostPerson, "asunto":subject, "descripcion":detail]
+        let params = ["idUser":idUser, "idLostPerson":idLostPerson, "subject":subject, "description":detail]
         let requestManager = RequestManager(params: params, resource: .clue)
         guard let (request, session) = requestManager.doRequest() else { return }
         session.dataTask(with: request) { (data, response, error) in
@@ -139,8 +115,9 @@ struct Service {
             }
         }.resume()
     }
+    
     func sendReport(from idUser: String, for idLostPerson: String, name: String, _ report: String, completion: @escaping (Bool) -> ()) {
-        let params = ["idUsuario":idUser, "idLostPerson":idLostPerson, "nombre":name, "report":report]
+        let params = ["idUser":idUser, "idLostPerson":idLostPerson, "name":name, "report":report]
         let requestManager = RequestManager(params: params, resource: .report)
         guard let (request, session) = requestManager.doRequest() else { return }
         session.dataTask(with: request) { (data, response, error) in

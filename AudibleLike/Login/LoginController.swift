@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import TRON
-import SwiftyJSON
 import SnapKit
 
 class LoginController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, LoginControllerDelegate{
@@ -160,7 +158,7 @@ extension LoginController {
     
     func finishLoggingIn(_ username: String, _ password: String) {
         Service.sharedInstance.fetchLogged(username, password) { (user) in
-            if let username = user.username, username.isEmpty {
+            if user.username.isEmpty {
                 let alert = UIAlertController(title: "Error", message: "El usuario no existe", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)

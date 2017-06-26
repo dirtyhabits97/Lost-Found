@@ -34,11 +34,11 @@ class ProfileController: UITableViewController{
         
         func getInfo(user: User) -> String{
             switch self {
-            case .dni: return ""
-            case .name: return (user.name == nil) ? "" : user.name!
-            case .username: return user.username == nil ? "" : user.username!
-            case .age: return ""
-            case .email: return user.username == nil ? "" : user.username!
+            case .dni: return user.dni ?? "-"
+            case .name: return user.name ?? "-"
+            case .username: return user.username ?? "-"
+            case .age: return user.age == nil ? "-" : String(describing: user.age!)
+            case .email: return user.email ?? "-"
             }
         }
         
@@ -86,6 +86,7 @@ class ProfileController: UITableViewController{
         navigationItem.rightBarButtonItem = logOutButton
         navigationController?.navigationBar.tintColor = orangeColor
         view.backgroundColor = UIColor(red: 0.89, green: 0.90, blue: 0.92, alpha: 1)
+        tableView.allowsSelection = false
     }
     
     func setupViews() {

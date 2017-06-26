@@ -7,8 +7,6 @@
 //
 
 import Foundation
-import TRON
-import SwiftyJSON
 import MapKit
 
 class Categories {
@@ -19,7 +17,7 @@ class Categories {
     }
     init(dictionary: [String:Any]) {
         var _lostCategories: [LostCategory] = []
-        if let dictionaries = dictionary["categorias"] as? [[String:Any]] {
+        if let dictionaries = dictionary["categories"] as? [[String:Any]] {
             for dict in dictionaries {
                 let category = LostCategory(dictionary: dict)
                 _lostCategories.append(category)
@@ -40,8 +38,8 @@ class LostCategory {
     }
     init(dictionary: [String:Any]) {
         var _lostArray: [Lost] = []
-        self.name = dictionary["nombre"] as? String ?? ""
-        if let dictionaries = dictionary["perdidos"] as? [[String:Any]] {
+        self.name = dictionary["name"] as? String ?? ""
+        if let dictionaries = dictionary["missing"] as? [[String:Any]] {
             for dict in dictionaries {
                 let lost = Lost(dictionary: dict)
                 _lostArray.append(lost)
@@ -73,14 +71,14 @@ class Lost {
         self.longitude = longitude//-76.9719187
     }
     init(dictionary: [String:Any]) {
-        self.firstname = dictionary["nombre"] as? String ?? ""
-        self.lastname = dictionary["apellido"] as? String ?? ""
+        self.firstname = dictionary["firstname"] as? String ?? ""
+        self.lastname = dictionary["lastname"] as? String ?? ""
         self.dni = dictionary["dni"] as? String ?? ""
-        self.age = dictionary["age"] as? Int ?? 0
-        self.description = dictionary["description"] as? String ?? ""
+        self.age = dictionary["edad"] as? Int ?? 0
+        self.description = dictionary["descripcion"] as? String ?? ""
         self.imageUrl = dictionary["imagen"] as? String ?? ""
-        self.longitude = dictionary["longitud"] as? Double ?? 0
-        self.latitude = dictionary["latitud"] as? Double ?? 0
+        self.longitude = dictionary["longitude"] as? Double ?? 0
+        self.latitude = dictionary["latitude"] as? Double ?? 0
     }
 }
 

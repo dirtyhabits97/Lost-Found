@@ -124,9 +124,15 @@ class ReportController: UIViewController {
     }
     func handleSendReport() {
         if !(reportTextView.text.isEmpty) && !(reportTextView.text == "Denuncia") && (reportTextView.text.characters.count < 601){
-            guard let currentUser = UserDefaults.standard.unarchiveUser().username else { return }
+            let currentUser = UserDefaults.standard.unarchiveUser().username
             Service.sharedInstance.sendReport(from: currentUser, for: dniTextField.text ?? "", name: nameTextField.text ?? "", reportTextView.text, completion: { (result) in
-                // TO DO
+                let title = result == false ? "Se produjo un error al enviar la denuncia" : "Denuncia Enviada!"
+                let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+                self.present(alert, animated: true) {
+                    self.dismiss(animated: true, completion: {
+                        self.navigationController?.popViewController(animated: true)
+                    })
+                }
             })
         } else {
             let alert = UIAlertController(title: "Aviso", message: "La denuncia no puede estar vacía", preferredStyle: .alert)

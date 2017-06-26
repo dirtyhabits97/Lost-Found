@@ -14,6 +14,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>GTMSessionFetcher.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>GoogleToolboxForMac.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-AudibleLike.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -29,30 +39,15 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>SwiftyJSON.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>TRON.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>3CD77655BF88EFE8BA83432D670403D2</key>
+		<key>00103D6C821BE85971C563025527BA5D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>54A7804D9912EE46997A7B12A8E593A4</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>74392F12DF7A4BC0AA5E66656577D175</key>
+		<key>868EE61E7F771B78DDCA3F69445EF3E5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -62,17 +57,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>94B09FC8526432CC8A96FADC83BF0CD5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>9EFE4C70245EE2857D336B8B9FA4E825</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AA13510896FB22250B72F7F08D407742</key>
+		<key>C052BEBFBD0AB5218CC64BA3450F6547</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D598CE54E719888C974115D532C9435E</key>
+		<key>CA5687DC5A47211B84E8940B94F6EB10</key>
 		<dict>
 			<key>primary</key>
 			<true/>
