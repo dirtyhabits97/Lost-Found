@@ -8,7 +8,6 @@
 
 import UIKit
 import SnapKit
-import AlamofireImage
 
 class ProfileController: UITableViewController{
     
@@ -35,8 +34,8 @@ class ProfileController: UITableViewController{
         func getInfo(user: User) -> String{
             switch self {
             case .dni: return user.dni ?? "-"
-            case .name: return user.name ?? "-"
-            case .username: return user.username ?? "-"
+            case .name: return user.name 
+            case .username: return user.username 
             case .age: return user.age == nil ? "-" : String(describing: user.age!)
             case .email: return user.email ?? "-"
             }
@@ -122,10 +121,6 @@ extension ProfileController {
             let item = profileItem.init(rawValue: indexPath.row)
             cell.settingInfoLabel.text = item?.title
             cell.infoLabel.text = item?.getInfo(user: user)
-            //          cell.textLabel?.text = profileItem.init(rawValue: indexPath.row)?.title
-            //          cell.preservesSuperviewLayoutMargins = false
-            //          cell.separatorInset = UIEdgeInsets.zero
-            //          cell.layoutMargins = UIEdgeInsets.zero
             return cell
             
         default:

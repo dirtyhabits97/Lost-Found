@@ -128,13 +128,22 @@ class ReportController: UIViewController {
     func handleSendReport() {
         if !(reportTextView.text.isEmpty) && !(reportTextView.text == "Denuncia") && (reportTextView.text.characters.count < 601){
             let currentUser = UserDefaults.standard.unarchiveUser().username
-            Service.sharedInstance.sendReport(from: currentUser, for: dniTextField.text ?? "", name: nameTextField.text ?? "", reportTextView.text, completion: { (result) in
-                let title = result == false ? "Se produjo un error al enviar la denuncia" : "Denuncia Enviada!"
-                let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
-                self.present(alert, animated: true) {
-                    self.dismiss(animated: true, completion: {
-                        self.navigationController?.popViewController(animated: true)
-                    })
+            Service.shared.sendReport(from: currentUser, for: dniTextField.text ?? "", name: nameTextField.text ?? "", reportTextView.text, completion: { state in
+                switch state {
+                case .failure(_):
+                    let alert = UIAlertController(title: "Error", message: "Se produjo un error interno", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                    return
+                    
+                case .success(let result):
+                    let title = result == false ? "Se produjo un error al enviar la denuncia" : "Denuncia Enviada!"
+                    let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+                    self.present(alert, animated: true) {
+                        self.dismiss(animated: true, completion: {
+                            self.navigationController?.popViewController(animated: true)
+                        })
+                    }
                 }
             })
         } else {

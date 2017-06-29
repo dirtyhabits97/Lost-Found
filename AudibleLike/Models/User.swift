@@ -51,10 +51,14 @@ class User: NSObject, NSCoding {
     
 }
 
-class Credential {
-    let result: Bool
-    
+enum State<T> {
+    case success(T)
+    case failure(Error)
+}
+
+struct Result {
+    let value: Bool
     init(dictionary: [String:Any]) {
-        self.result = (dictionary["result"] as? NSNumber ?? 0) == 0 ? false : true
+        self.value = (dictionary["result"] as? NSNumber ?? 0) == 0 ? false : true
     }
 }

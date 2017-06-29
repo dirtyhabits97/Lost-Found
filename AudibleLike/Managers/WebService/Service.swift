@@ -14,7 +14,7 @@ struct Service {
         return "https://lostnf.herokuapp.com"
     }
     
-    static let sharedInstance = Service()
+    static let shared = Service()
     
     enum Resource {
         case login, register, list, clue, report, test
@@ -36,54 +36,54 @@ struct Service {
         }
     }
        
-    func fetchRegisterResult(_ name: String, _ username:String, _ password:String, completion: @escaping (Bool)->()) {
+    func fetchRegisterResult(_ name: String, _ username:String, _ password:String, completion: @escaping (State<Bool>)->()) {
         let params = ["name":name, "username":username, "password":password]
         let requestManager = RequestManager(params: params, resource: .register)
         guard let (request, session) = requestManager.doRequest() else { return }
         session.dataTask(with: request) { (data, response, error) in
             if let err = error {
                 print("Failed to receive result from register: ", err)
-                return
+                completion(State.failure(err))
             }
             guard let data = data else { return }
             let dataDictionary = try? JSONSerialization.jsonObject(with: data, options: [])
             guard let dictionary = dataDictionary as? [String:Any] else { return }
-            let credential = Credential(dictionary: dictionary)
+            let result = Result(dictionary: dictionary)
             DispatchQueue.main.async {
-                completion(credential.result)
+                completion(State.success(result.value))
             }
         }.resume()
     }
     
-    func fetchLogged(_ username:String, _ password:String, completion: @escaping (User)->()) {
+    func fetchLogged(_ username:String, _ password:String, completion: @escaping (State<User>)->()) {
         let params = ["username":username, "password":password]
         let requestManager = RequestManager(params: params, resource: .login)
         guard let (request, session) = requestManager.doRequest() else { return }
         session.dataTask(with: request) { (data, response, error) in
             if let err = error {
                 print("Failed to do login: ", err)
-                return
+                completion(State.failure(err))
             }
             guard let data = data else { return }
             let dataDictionary = try? JSONSerialization.jsonObject(with: data, options: [])
             guard let dictionary = dataDictionary as? [String:Any] else { return }
             let user = User(dictionary: dictionary)
             DispatchQueue.main.async {
-                completion(user)
+                completion(State.success(user))
 //                gonzalorehu
                 
             }
         }.resume()
     }
     
-    func fetchCategories(completion: @escaping ([LostCategory])->()) {
+    func fetchCategories(completion: @escaping (State<[LostCategory]>)->()) {
         let params = [String:String]()
         let requestManager = RequestManager(params: params, resource: .list)
         guard let (request, session) = requestManager.doRequest() else { return }
         session.dataTask(with: request) { (data, response, error) in
             if let err = error {
                 print("Failed to fetch categories: ", err)
-                return
+                completion(State.failure(err))
             }
             guard let data = data else { return }
             let dataDictionary = try? JSONSerialization.jsonObject(with: data, options: [])
@@ -91,46 +91,45 @@ struct Service {
             let categories = Categories(dictionary: dictionary)
             guard let lostCategories = categories.lostCategories else { return }
             DispatchQueue.main.async {
-                completion(lostCategories)
+                completion(State.success(lostCategories))
             }
         }.resume()
     }
     
-    func sendClue(for idLostPerson: String, from idUser: String, _ subject: String, _ detail: String, completion: @escaping (Bool)->()) {
+    func sendClue(for idLostPerson: String, from idUser: String, _ subject: String, _ detail: String, completion: @escaping (State<Bool>)->()) {
         let params = ["idUser":idUser, "idLostPerson":idLostPerson, "subject":subject, "description":detail]
         let requestManager = RequestManager(params: params, resource: .clue)
         guard let (request, session) = requestManager.doRequest() else { return }
         session.dataTask(with: request) { (data, response, error) in
             if let err = error {
                 print("Failed to receive result from sending clue: ", err)
-                return
+                completion(State.failure(err))
             }
             guard let data = data else { return }
             let dataDictionary = try? JSONSerialization.jsonObject(with: data, options: [])
             guard let dictionary = dataDictionary as? [String:Any] else { return }
-            let credential = Credential(dictionary: dictionary)
+            let result = Result(dictionary: dictionary)
             DispatchQueue.main.async {
-                print(credential.result)
-                completion(credential.result)
+                completion(State.success(result.value))
             }
         }.resume()
     }
     
-    func sendReport(from idUser: String, for idLostPerson: String, name: String, _ report: String, completion: @escaping (Bool) -> ()) {
+    func sendReport(from idUser: String, for idLostPerson: String, name: String, _ report: String, completion: @escaping (State<Bool>) -> ()) {
         let params = ["idUser":idUser, "idLostPerson":idLostPerson, "name":name, "report":report]
         let requestManager = RequestManager(params: params, resource: .report)
         guard let (request, session) = requestManager.doRequest() else { return }
         session.dataTask(with: request) { (data, response, error) in
             if let err = error {
                 print("Failed to receive result from sending report: ", err)
-                return
+                completion(State.failure(err))
             }
             guard let data = data else { return }
             let dataDictionary = try? JSONSerialization.jsonObject(with: data, options: [])
             guard let dictionary = dataDictionary as? [String:Any] else { return }
-            let credential = Credential(dictionary: dictionary)
+            let result = Result(dictionary: dictionary)
             DispatchQueue.main.async {
-                completion(credential.result)
+                completion(State.success(result.value))
             }
         }.resume()
     }

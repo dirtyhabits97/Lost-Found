@@ -69,9 +69,15 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         navigationItem.title = user.username
         collectionView?.register(HomeControllerCell.self, forCellWithReuseIdentifier: cellId)
         
-        Service.sharedInstance.fetchCategories { (categories) in
-            self.categories = categories
-            self.collectionView?.reloadData()
+        Service.shared.fetchCategories { state in
+            switch state {
+            case .failure(_):
+                break
+                //TODO
+            case .success(let categories):
+                self.categories = categories
+                self.collectionView?.reloadData()
+            }
         }
     }
 }

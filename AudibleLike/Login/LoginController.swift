@@ -157,44 +157,59 @@ extension LoginController {
 extension LoginController {
     
     func finishLoggingIn(_ username: String, _ password: String) {
-        Service.sharedInstance.fetchLogged(username, password) { (user) in
-            if user.username.isEmpty {
-                let alert = UIAlertController(title: "Error", message: "El usuario no existe", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
-                return
-            }
-            
-            let rootViewController = UIApplication.shared.keyWindow?.rootViewController
-            //downcast that Root ViewController to a my HomeNavigationController
-            guard let homeNavController = rootViewController as? HomeNavigationController else {
-                print("Not a Home Navigation Controller")
-                return
-            }
-            let flowLayout = UICollectionViewFlowLayout()
-            let homeController = HomeController(collectionViewLayout: flowLayout)
-            homeController.user = user
-            //archive the user
-            UserDefaults.standard.archiveUser(user)
-            homeNavController.viewControllers = [homeController]
-            UserDefaults.standard.setIsLoggedIn(value: true)
-            self.dismiss(animated: true, completion: nil)
-        }
-        
-    }
-    
-    func finishRegister(_ name: String, _ username:String, _ password:String) {
-        Service.sharedInstance.fetchRegisterResult(name, username, password) { (result) in
-            print("The result was:" , result)
-            switch result{
-            case false:
-                let alert = UIAlertController(title: "Error", message: "Se ha producido un error", preferredStyle: .alert)
+        Service.shared.fetchLogged(username, password) { (state) in
+            switch state {
+            case .failure(_):
+                let alert = UIAlertController(title: "Error", message: "Se produjo un error interno", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
                 return
                 
-            case true:
-                self.finishLoggingIn(username, password)
+            case .success(let user):
+                if user.username.isEmpty {
+                    let alert = UIAlertController(title: "Error", message: "El usuario no existe", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                    return
+                }
+                
+                let rootViewController = UIApplication.shared.keyWindow?.rootViewController
+                //downcast Root ViewController to a HomeNavigationController
+                guard let homeNavController = rootViewController as? HomeNavigationController else {
+                    print("Not a Home Navigation Controller")
+                    return
+                }
+                let flowLayout = UICollectionViewFlowLayout()
+                let homeController = HomeController(collectionViewLayout: flowLayout)
+                homeController.user = user
+                //archive the user
+                UserDefaults.standard.archiveUser(user)
+                homeNavController.viewControllers = [homeController]
+                UserDefaults.standard.setIsLoggedIn(value: true)
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+    }
+    
+    func finishRegister(_ name: String, _ username:String, _ password:String) {
+        Service.shared.fetchRegisterResult(name, username, password) { state in
+            switch state {
+            case .failure(_):
+                let alert = UIAlertController(title: "Error", message: "Se produjo un error interno", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                return
+            case .success(let result):
+                switch result {
+                case false:
+                    let alert = UIAlertController(title: "Error", message: "Usuario inválido", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                    return
+                    
+                case true:
+                    self.finishLoggingIn(username, password)
+                }
             }
         }
     }

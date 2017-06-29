@@ -7,7 +7,6 @@ target 'AudibleLike' do
 
   # Pods for AudibleLike
   pod 'SnapKit', '~> 3.2.0'
-  pod 'AlamofireImage', '~> 3.1'
 
 end
 

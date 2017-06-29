@@ -27,7 +27,7 @@ extension Service {
         }
         
         fileprivate func doGet() -> (URLRequest, URLSession)? {
-            let urlComp = NSURLComponents(string: Service.sharedInstance.baseUrl + resource.path)
+            let urlComp = NSURLComponents(string: Service.shared.baseUrl + resource.path)
             var items = [URLQueryItem]()
             for (key, value) in params {
                 items.append(URLQueryItem(name: key, value: String(describing: value)))
@@ -44,7 +44,7 @@ extension Service {
         }
         
         fileprivate func doPost() -> (URLRequest, URLSession)? {
-            guard let url = URL(string: Service.sharedInstance.baseUrl + resource.path) else { return nil }
+            guard let url = URL(string: Service.shared.baseUrl + resource.path) else { return nil }
             var urlRequest = URLRequest(url: url)
             urlRequest.httpMethod = resource.httpMethod
             urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
