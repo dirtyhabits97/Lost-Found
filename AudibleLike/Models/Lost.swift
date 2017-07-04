@@ -15,20 +15,17 @@ class Categories {
     init(lostCategories: [LostCategory]?) {
         self.lostCategories = lostCategories
     }
+    
     init(dictionary: [String:Any]) {
-        var _lostCategories: [LostCategory] = []
         if let dictionaries = dictionary["categories"] as? [[String:Any]] {
-            for dict in dictionaries {
-                let category = LostCategory(dictionary: dict)
-                _lostCategories.append(category)
-            }
+            self.lostCategories = dictionaries.map { LostCategory(dictionary: $0) }
+        } else {
+            self.lostCategories = nil
         }
-        self.lostCategories = _lostCategories
     }
 }
 
 class LostCategory {
-    
     let name: String
     let lostArray: [Lost]?
     
@@ -36,16 +33,14 @@ class LostCategory {
         self.name = name
         self.lostArray = lostArray
     }
+    
     init(dictionary: [String:Any]) {
-        var _lostArray: [Lost] = []
         self.name = dictionary["name"] as? String ?? ""
         if let dictionaries = dictionary["missing"] as? [[String:Any]] {
-            for dict in dictionaries {
-                let lost = Lost(dictionary: dict)
-                _lostArray.append(lost)
-            }
+            self.lostArray = dictionaries.map { Lost(dictionary: $0) }
+        } else {
+            self.lostArray = nil
         }
-        self.lostArray = _lostArray
     }
 }
 
@@ -70,6 +65,7 @@ class Lost {
         self.latitude = latitude//-12.0854081
         self.longitude = longitude//-76.9719187
     }
+    
     init(dictionary: [String:Any]) {
         self.firstname = dictionary["firstname"] as? String ?? ""
         self.lastname = dictionary["lastname"] as? String ?? ""

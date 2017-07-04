@@ -50,15 +50,3 @@ class User: NSObject, NSCoding {
     }
     
 }
-
-enum State<T> {
-    case success(T)
-    case failure(Error)
-}
-
-struct Result {
-    let value: Bool
-    init(dictionary: [String:Any]) {
-        self.value = (dictionary["result"] as? NSNumber ?? 0) == 0 ? false : true
-    }
-}

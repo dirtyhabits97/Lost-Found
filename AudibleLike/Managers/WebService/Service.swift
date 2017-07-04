@@ -17,7 +17,7 @@ struct Service {
     static let shared = Service()
     
     enum Resource {
-        case login, register, list, clue, report, test
+        case login, register, list, clue, report, test, news
         var path: String {
             switch self{
             case .login: return "/login/"
@@ -26,18 +26,18 @@ struct Service {
             case .clue: return "/clue/"
             case .report: return "/report/"
             case .test: return "/test"
+            case .news: return "/news"
             }
         }
         var httpMethod: String {
             switch self {
-            case .list, .test: return "GET"
+            case .list, .test, .news: return "GET"
             case .register,.login ,.clue, .report: return "POST"
             }
         }
     }
        
-    func fetchRegisterResult(_ name: String, _ username:String, _ password:String, completion: @escaping (State<Bool>)->()) {
-        let params = ["name":name, "username":username, "password":password]
+    func registerUser(for params: [String: Any], completion: @escaping (State<Bool>) -> ()) {
         let requestManager = RequestManager(params: params, resource: .register)
         guard let (request, session) = requestManager.doRequest() else { return }
         session.dataTask(with: request) { (data, response, error) in
@@ -45,6 +45,13 @@ struct Service {
                 print("Failed to receive result from register: ", err)
                 completion(State.failure(err))
             }
+            
+            guard let resp = response as? HTTPURLResponse else { return }
+            if resp.statusCode != 200 {
+                print("Failed to receive a 200 OK status")
+                completion(State.failure(HTTPStatusError.not200))
+            }
+            
             guard let data = data else { return }
             let dataDictionary = try? JSONSerialization.jsonObject(with: data, options: [])
             guard let dictionary = dataDictionary as? [String:Any] else { return }
@@ -55,8 +62,7 @@ struct Service {
         }.resume()
     }
     
-    func fetchLogged(_ username:String, _ password:String, completion: @escaping (State<User>)->()) {
-        let params = ["username":username, "password":password]
+    func loginUser(for params: [String: Any], completion: @escaping (State<User>) -> ()) {
         let requestManager = RequestManager(params: params, resource: .login)
         guard let (request, session) = requestManager.doRequest() else { return }
         session.dataTask(with: request) { (data, response, error) in
@@ -64,27 +70,39 @@ struct Service {
                 print("Failed to do login: ", err)
                 completion(State.failure(err))
             }
+            
+            guard let resp = response as? HTTPURLResponse else { return }
+            if resp.statusCode != 200 {
+                print("Failed to receive a 200 OK status")
+                completion(State.failure(HTTPStatusError.not200))
+            }
+            
             guard let data = data else { return }
             let dataDictionary = try? JSONSerialization.jsonObject(with: data, options: [])
             guard let dictionary = dataDictionary as? [String:Any] else { return }
             let user = User(dictionary: dictionary)
             DispatchQueue.main.async {
                 completion(State.success(user))
-//                gonzalorehu
                 
             }
         }.resume()
     }
     
-    func fetchCategories(completion: @escaping (State<[LostCategory]>)->()) {
-        let params = [String:String]()
-        let requestManager = RequestManager(params: params, resource: .list)
+    func fetchCategories(completion: @escaping (State<[LostCategory]>) -> ()) {
+        let requestManager = RequestManager(params: [String:String](), resource: .list)
         guard let (request, session) = requestManager.doRequest() else { return }
         session.dataTask(with: request) { (data, response, error) in
             if let err = error {
                 print("Failed to fetch categories: ", err)
                 completion(State.failure(err))
             }
+            
+            guard let resp = response as? HTTPURLResponse else { return }
+            if resp.statusCode != 200 {
+                print("Failed receive a 200 OK status")
+                completion(State.failure(HTTPStatusError.not200))
+            }
+            
             guard let data = data else { return }
             let dataDictionary = try? JSONSerialization.jsonObject(with: data, options: [])
             guard let dictionary = dataDictionary as? [String:Any] else { return }
@@ -96,8 +114,7 @@ struct Service {
         }.resume()
     }
     
-    func sendClue(for idLostPerson: String, from idUser: String, _ subject: String, _ detail: String, completion: @escaping (State<Bool>)->()) {
-        let params = ["idUser":idUser, "idLostPerson":idLostPerson, "subject":subject, "description":detail]
+    func sendClue(for params: [String: Any], completion: @escaping (State<Bool>) -> ()) {
         let requestManager = RequestManager(params: params, resource: .clue)
         guard let (request, session) = requestManager.doRequest() else { return }
         session.dataTask(with: request) { (data, response, error) in
@@ -105,6 +122,13 @@ struct Service {
                 print("Failed to receive result from sending clue: ", err)
                 completion(State.failure(err))
             }
+            
+            guard let resp = response as? HTTPURLResponse else { return }
+            if resp.statusCode != 200 {
+                print("Failed to receive a 200 OK status")
+                completion(State.failure(HTTPStatusError.not200))
+            }
+            
             guard let data = data else { return }
             let dataDictionary = try? JSONSerialization.jsonObject(with: data, options: [])
             guard let dictionary = dataDictionary as? [String:Any] else { return }
@@ -115,8 +139,7 @@ struct Service {
         }.resume()
     }
     
-    func sendReport(from idUser: String, for idLostPerson: String, name: String, _ report: String, completion: @escaping (State<Bool>) -> ()) {
-        let params = ["idUser":idUser, "idLostPerson":idLostPerson, "name":name, "report":report]
+    func sendReport(for params: [String: Any], completion: @escaping (State<Bool>) -> ()) {
         let requestManager = RequestManager(params: params, resource: .report)
         guard let (request, session) = requestManager.doRequest() else { return }
         session.dataTask(with: request) { (data, response, error) in
@@ -124,12 +147,44 @@ struct Service {
                 print("Failed to receive result from sending report: ", err)
                 completion(State.failure(err))
             }
+            
+            guard let resp = response as? HTTPURLResponse else { return }
+            if resp.statusCode != 200 {
+                print("Failed to receive a 200 OK status")
+                completion(State.failure(HTTPStatusError.not200))
+            }
+            
             guard let data = data else { return }
             let dataDictionary = try? JSONSerialization.jsonObject(with: data, options: [])
             guard let dictionary = dataDictionary as? [String:Any] else { return }
             let result = Result(dictionary: dictionary)
             DispatchQueue.main.async {
                 completion(State.success(result.value))
+            }
+        }.resume()
+    }
+    
+    func fetchNewsFeed(completion: @escaping (State<NewsFeed>) -> ()) {
+        let requestManager = RequestManager(params: [String:String](), resource: .news)
+        guard let (request, session) = requestManager.doRequest() else { return }
+        session.dataTask(with: request) { (data, response, error) in
+            if let err = error {
+                print("Failed to fetch news feed: ", err)
+                completion(State.failure(err))
+            }
+            
+            guard let resp = response as? HTTPURLResponse else { return }
+            if resp.statusCode != 200 {
+                print("Failed to receive a 200 OK status")
+                completion(State.failure(HTTPStatusError.not200))
+            }
+            
+            guard let data = data else { return }
+            let dataDictionary = try? JSONSerialization.jsonObject(with: data, options: [])
+            guard let dictionary = dataDictionary as? [[String: Any]] else { return }
+            let news = dictionary.map { News(dictionary: $0) }
+            DispatchQueue.main.async {
+                completion(State.success(news))
             }
         }.resume()
     }

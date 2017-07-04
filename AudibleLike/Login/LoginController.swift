@@ -37,7 +37,6 @@ class LoginController: UIViewController, UICollectionViewDelegate, UICollectionV
         cv.isPagingEnabled = true
         cv.delegate = self
         cv.dataSource = self
-        cv.translatesAutoresizingMaskIntoConstraints = false
         return cv
     }()
     
@@ -50,7 +49,6 @@ class LoginController: UIViewController, UICollectionViewDelegate, UICollectionV
         pc.isUserInteractionEnabled = false
         //this color looks cool-orange
         pc.currentPageIndicatorTintColor = orangeColor
-        pc.translatesAutoresizingMaskIntoConstraints = false
         return pc
     }()
     
@@ -59,7 +57,6 @@ class LoginController: UIViewController, UICollectionViewDelegate, UICollectionV
         button.setTitle("Skip", for: .normal)
         button.setTitleColor(orangeColor, for: .normal)
         button.addTarget(self, action: #selector(skip), for: .touchUpInside)
-        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
@@ -68,7 +65,6 @@ class LoginController: UIViewController, UICollectionViewDelegate, UICollectionV
         button.setTitle("Next", for: .normal)
         button.setTitleColor(orangeColor, for: .normal)
         button.addTarget(self, action: #selector(nextPage), for: .touchUpInside)
-        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
@@ -157,7 +153,8 @@ extension LoginController {
 extension LoginController {
     
     func finishLoggingIn(_ username: String, _ password: String) {
-        Service.shared.fetchLogged(username, password) { (state) in
+        let params = ["username":username, "password":password]
+        Service.shared.loginUser(for: params) { (state) in
             switch state {
             case .failure(_):
                 let alert = UIAlertController(title: "Error", message: "Se produjo un error interno", preferredStyle: .alert)
@@ -192,7 +189,8 @@ extension LoginController {
     }
     
     func finishRegister(_ name: String, _ username:String, _ password:String) {
-        Service.shared.fetchRegisterResult(name, username, password) { state in
+        let params = ["name":name, "username":username, "password":password]
+        Service.shared.registerUser(for: params) { state in
             switch state {
             case .failure(_):
                 let alert = UIAlertController(title: "Error", message: "Se produjo un error interno", preferredStyle: .alert)
