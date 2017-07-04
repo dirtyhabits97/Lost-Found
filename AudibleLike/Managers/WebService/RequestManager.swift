@@ -26,7 +26,7 @@ extension Service {
             return nil
         }
         
-        fileprivate func doGet() -> (URLRequest, URLSession)? {
+        private func doGet() -> (URLRequest, URLSession)? {
             let urlComp = NSURLComponents(string: Service.shared.baseUrl + resource.path)
             var items = [URLQueryItem]()
             for (key, value) in params {
@@ -43,7 +43,7 @@ extension Service {
             return (urlRequest, session)
         }
         
-        fileprivate func doPost() -> (URLRequest, URLSession)? {
+        private func doPost() -> (URLRequest, URLSession)? {
             guard let url = URL(string: Service.shared.baseUrl + resource.path) else { return nil }
             var urlRequest = URLRequest(url: url)
             urlRequest.httpMethod = resource.httpMethod

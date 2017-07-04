@@ -29,7 +29,7 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     var everyLostPeople: [Lost]?
     
     fileprivate let cellId = "cellId"
-    fileprivate let y:CGFloat = 104
+    fileprivate let y: CGFloat = 104
     fileprivate let xOffset: CGFloat = 14
     
     // MARK: - Interface Objects
@@ -61,19 +61,31 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     // MARK: - View Lifecycle
         
     override func viewDidLoad() {
-        super.viewDidLoad()        
+        super.viewDidLoad()
+        setupNavBar()
+        setupCollectionView()
+        fetchCategories()
+        
+    }
+    
+    fileprivate func setupNavBar() {
         navigationController?.navigationBar.tintColor = orangeColor
-        collectionView?.backgroundColor = .white
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: profileButton)
         navigationItem.rightBarButtonItem = moreOptionsButton
         navigationItem.title = user.username
+    }
+    
+    fileprivate func setupCollectionView() {
+        collectionView?.backgroundColor = .white
         collectionView?.register(HomeControllerCell.self, forCellWithReuseIdentifier: cellId)
-        
+    }
+    
+    fileprivate func fetchCategories() {
         Service.shared.fetchCategories { state in
             switch state {
             case .failure(_):
                 break
-                //TODO
+            //TODO
             case .success(let categories):
                 self.categories = categories
                 self.collectionView?.reloadData()
@@ -113,7 +125,9 @@ extension HomeController {
         present(mapController, animated: true)
     }
     func handleNewsController() {
-        
+        handleDismiss()
+        let newsController = NewsController()
+        navigationController?.pushViewController(newsController, animated: true)
     }
 }
 

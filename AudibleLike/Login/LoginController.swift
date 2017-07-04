@@ -37,7 +37,6 @@ class LoginController: UIViewController, UICollectionViewDelegate, UICollectionV
         cv.isPagingEnabled = true
         cv.delegate = self
         cv.dataSource = self
-        cv.translatesAutoresizingMaskIntoConstraints = false
         return cv
     }()
     
@@ -50,7 +49,6 @@ class LoginController: UIViewController, UICollectionViewDelegate, UICollectionV
         pc.isUserInteractionEnabled = false
         //this color looks cool-orange
         pc.currentPageIndicatorTintColor = orangeColor
-        pc.translatesAutoresizingMaskIntoConstraints = false
         return pc
     }()
     
@@ -59,7 +57,6 @@ class LoginController: UIViewController, UICollectionViewDelegate, UICollectionV
         button.setTitle("Skip", for: .normal)
         button.setTitleColor(orangeColor, for: .normal)
         button.addTarget(self, action: #selector(skip), for: .touchUpInside)
-        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
@@ -68,7 +65,6 @@ class LoginController: UIViewController, UICollectionViewDelegate, UICollectionV
         button.setTitle("Next", for: .normal)
         button.setTitleColor(orangeColor, for: .normal)
         button.addTarget(self, action: #selector(nextPage), for: .touchUpInside)
-        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
