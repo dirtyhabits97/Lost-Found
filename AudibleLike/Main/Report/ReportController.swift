@@ -127,8 +127,9 @@ class ReportController: UIViewController {
     }
     func handleSendReport() {
         if !(reportTextView.text.isEmpty) && !(reportTextView.text == "Denuncia") && (reportTextView.text.characters.count < 601){
-            let currentUser = UserDefaults.standard.unarchiveUser().username
-            Service.shared.sendReport(from: currentUser, for: dniTextField.text ?? "", name: nameTextField.text ?? "", reportTextView.text, completion: { state in
+            let username = UserDefaults.standard.unarchiveUser().username
+            let params = ["idUser": username, "idLostPerson": dniTextField.text ?? "", "name": nameTextField.text ?? "", "report": reportTextView.text] as [String : Any]
+            Service.shared.sendReport(for: params, completion: { state in
                 switch state {
                 case .failure(_):
                     let alert = UIAlertController(title: "Error", message: "Se produjo un error interno", preferredStyle: .alert)

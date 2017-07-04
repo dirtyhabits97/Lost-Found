@@ -96,10 +96,12 @@ class ClueViewController: UIViewController, UITextViewDelegate, UITextFieldDeleg
             present(alert, animated: true)
             return
         }
-        let user = UserDefaults.standard.unarchiveUser().username
-        let lostPerson = self.lostPerson.dni
+        let username = UserDefaults.standard.unarchiveUser().username
+        let dni = self.lostPerson.dni
         
-        Service.shared.sendClue(for: lostPerson, from: user, subject, detail) { state in
+        let params = ["idUser": username, "idLostPerson": dni, "subject": subject, "description": detail]
+        
+        Service.shared.sendClue(for: params) { state in
             switch state {
             case .failure(_):
                 let alert = UIAlertController(title: "Error", message: "Se produjo un error interno", preferredStyle: .alert)

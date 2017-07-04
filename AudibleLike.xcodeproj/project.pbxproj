@@ -28,6 +28,8 @@
 		7C8D7F851EF2E3680061FFC0 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8D7F841EF2E3680061FFC0 /* CustomImageView.swift */; };
 		7C8D7F891EF2F0460061FFC0 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8D7F881EF2F0460061FFC0 /* MapController.swift */; };
 		7C8D7F8B1EF30CF60061FFC0 /* ReportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8D7F8A1EF30CF60061FFC0 /* ReportController.swift */; };
+		7C94D4381F0B165100C14DEE /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C94D4371F0B165100C14DEE /* Request.swift */; };
+		7C94D43A1F0B1C0800C14DEE /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C94D4391F0B1C0800C14DEE /* News.swift */; };
 		7C9BD70D1EC13060003242CA /* TextField+helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9BD70C1EC13060003242CA /* TextField+helpers.swift */; };
 		7C9BD70F1EC13D1D003242CA /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9BD70E1EC13D1D003242CA /* Protocols.swift */; };
 		7C9BD7111EC146E6003242CA /* Lost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9BD7101EC146E6003242CA /* Lost.swift */; };
@@ -92,6 +94,8 @@
 		7C8D7F841EF2E3680061FFC0 /* CustomImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		7C8D7F881EF2F0460061FFC0 /* MapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapController.swift; path = Main/Map/MapController.swift; sourceTree = "<group>"; };
 		7C8D7F8A1EF30CF60061FFC0 /* ReportController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReportController.swift; path = Main/Report/ReportController.swift; sourceTree = "<group>"; };
+		7C94D4371F0B165100C14DEE /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		7C94D4391F0B1C0800C14DEE /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		7C9BD70C1EC13060003242CA /* TextField+helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TextField+helpers.swift"; path = "Helpers/TextField+helpers.swift"; sourceTree = "<group>"; };
 		7C9BD70E1EC13D1D003242CA /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Protocols.swift; path = Helpers/Protocols.swift; sourceTree = "<group>"; };
 		7C9BD7101EC146E6003242CA /* Lost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Lost.swift; path = Models/Lost.swift; sourceTree = "<group>"; };
@@ -196,6 +200,8 @@
 				7C41930F1EB29FA600FBC6AD /* User.swift */,
 				7CF906DA1EAE6EC600A9417E /* Page.swift */,
 				7C9BD7101EC146E6003242CA /* Lost.swift */,
+				7C94D4371F0B165100C14DEE /* Request.swift */,
+				7C94D4391F0B1C0800C14DEE /* News.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -604,10 +610,12 @@
 			files = (
 				7CF906E31EAED4CD00A9417E /* UserDefaults+helpers.swift in Sources */,
 				7C8D7F851EF2E3680061FFC0 /* CustomImageView.swift in Sources */,
+				7C94D43A1F0B1C0800C14DEE /* News.swift in Sources */,
 				7C7103771EC3D9DB0040CA28 /* SearchTableViewController.swift in Sources */,
 				7C9BD70D1EC13060003242CA /* TextField+helpers.swift in Sources */,
 				7CF906E11EAEB7AF00A9417E /* HomeNavigationController.swift in Sources */,
 				7C9BD70F1EC13D1D003242CA /* Protocols.swift in Sources */,
+				7C94D4381F0B165100C14DEE /* Request.swift in Sources */,
 				7C404D751EF838F000A56CDE /* RightToLeftAnimationTransition.swift in Sources */,
 				7C404D731EF830BA00A56CDE /* UIImage+helpers.swift in Sources */,
 				7CF906DD1EAE765B00A9417E /* GuideCell.swift in Sources */,
@@ -872,6 +880,7 @@
 				7C7F93A91F01478400DFFEA5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7CF906C01EAE6D3F00A9417E /* Build configuration list for PBXProject "AudibleLike" */ = {
 			isa = XCConfigurationList;
