@@ -37,10 +37,16 @@
 		7C9BD70D1EC13060003242CA /* TextField+helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9BD70C1EC13060003242CA /* TextField+helpers.swift */; };
 		7C9BD70F1EC13D1D003242CA /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9BD70E1EC13D1D003242CA /* Protocols.swift */; };
 		7C9BD7111EC146E6003242CA /* Lost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9BD7101EC146E6003242CA /* Lost.swift */; };
+		7CBB34DA1F13A6D80041A320 /* CheckStateErrorWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBB34D31F13A6D80041A320 /* CheckStateErrorWorker.swift */; };
+		7CBB34DB1F13A6D80041A320 /* LoginConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBB34D41F13A6D80041A320 /* LoginConfigurator.swift */; };
+		7CBB34DC1F13A6D80041A320 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBB34D51F13A6D80041A320 /* LoginInteractor.swift */; };
+		7CBB34DD1F13A6D80041A320 /* LoginModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBB34D61F13A6D80041A320 /* LoginModels.swift */; };
+		7CBB34DE1F13A6D80041A320 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBB34D71F13A6D80041A320 /* LoginPresenter.swift */; };
+		7CBB34DF1F13A6D80041A320 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBB34D81F13A6D80041A320 /* LoginRouter.swift */; };
+		7CBB34E01F13A6D80041A320 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBB34D91F13A6D80041A320 /* LoginViewController.swift */; };
 		7CC5096B1EC26455000E869C /* HomeControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC5096A1EC26455000E869C /* HomeControllerCell.swift */; };
 		7CC5096D1EC26DD7000E869C /* LostPersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC5096C1EC26DD7000E869C /* LostPersonCell.swift */; };
 		7CF906C91EAE6D3F00A9417E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF906C81EAE6D3F00A9417E /* AppDelegate.swift */; };
-		7CF906CB1EAE6D3F00A9417E /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF906CA1EAE6D3F00A9417E /* LoginController.swift */; };
 		7CF906CE1EAE6D3F00A9417E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CF906CC1EAE6D3F00A9417E /* Main.storyboard */; };
 		7CF906D01EAE6D3F00A9417E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CF906CF1EAE6D3F00A9417E /* Assets.xcassets */; };
 		7CF906D31EAE6D3F00A9417E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CF906D11EAE6D3F00A9417E /* LaunchScreen.storyboard */; };
@@ -107,11 +113,18 @@
 		7C9BD70C1EC13060003242CA /* TextField+helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TextField+helpers.swift"; path = "Helpers/TextField+helpers.swift"; sourceTree = "<group>"; };
 		7C9BD70E1EC13D1D003242CA /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Protocols.swift; path = Helpers/Protocols.swift; sourceTree = "<group>"; };
 		7C9BD7101EC146E6003242CA /* Lost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Lost.swift; path = Models/Lost.swift; sourceTree = "<group>"; };
+		7CBB34D31F13A6D80041A320 /* CheckStateErrorWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckStateErrorWorker.swift; sourceTree = "<group>"; };
+		7CBB34D41F13A6D80041A320 /* LoginConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginConfigurator.swift; sourceTree = "<group>"; };
+		7CBB34D51F13A6D80041A320 /* LoginInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
+		7CBB34D61F13A6D80041A320 /* LoginModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginModels.swift; sourceTree = "<group>"; };
+		7CBB34D71F13A6D80041A320 /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		7CBB34D81F13A6D80041A320 /* LoginRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		7CBB34D91F13A6D80041A320 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7CC5096A1EC26455000E869C /* HomeControllerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeControllerCell.swift; path = Main/Home/HomeControllerCell.swift; sourceTree = "<group>"; };
 		7CC5096C1EC26DD7000E869C /* LostPersonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LostPersonCell.swift; path = Main/Home/LostPersonCell.swift; sourceTree = "<group>"; };
 		7CF906C51EAE6D3F00A9417E /* AudibleLike.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudibleLike.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CF906C81EAE6D3F00A9417E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7CF906CA1EAE6D3F00A9417E /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginController.swift; path = Login/LoginController.swift; sourceTree = "<group>"; };
+		7CF906CA1EAE6D3F00A9417E /* LoginControllerOld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginControllerOld.swift; path = Login/LoginControllerOld.swift; sourceTree = "<group>"; };
 		7CF906CD1EAE6D3F00A9417E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7CF906CF1EAE6D3F00A9417E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7CF906D21EAE6D3F00A9417E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -302,6 +315,20 @@
 			name = Managers;
 			sourceTree = "<group>";
 		};
+		7CBB34D21F13A6D80041A320 /* cleanLogin */ = {
+			isa = PBXGroup;
+			children = (
+				7CBB34D31F13A6D80041A320 /* CheckStateErrorWorker.swift */,
+				7CBB34D41F13A6D80041A320 /* LoginConfigurator.swift */,
+				7CBB34D51F13A6D80041A320 /* LoginInteractor.swift */,
+				7CBB34D61F13A6D80041A320 /* LoginModels.swift */,
+				7CBB34D71F13A6D80041A320 /* LoginPresenter.swift */,
+				7CBB34D81F13A6D80041A320 /* LoginRouter.swift */,
+				7CBB34D91F13A6D80041A320 /* LoginViewController.swift */,
+			);
+			path = cleanLogin;
+			sourceTree = "<group>";
+		};
 		7CF906BC1EAE6D3F00A9417E = {
 			isa = PBXGroup;
 			children = (
@@ -344,7 +371,8 @@
 		7CF906E41EAED58C00A9417E /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				7CF906CA1EAE6D3F00A9417E /* LoginController.swift */,
+				7CBB34D21F13A6D80041A320 /* cleanLogin */,
+				7CF906CA1EAE6D3F00A9417E /* LoginControllerOld.swift */,
 				7CF906DC1EAE765B00A9417E /* GuideCell.swift */,
 				7CF906DE1EAE94E300A9417E /* LoginCell.swift */,
 			);
@@ -631,17 +659,19 @@
 			files = (
 				7CF906E31EAED4CD00A9417E /* UserDefaults+helpers.swift in Sources */,
 				7C8D7F851EF2E3680061FFC0 /* CustomImageView.swift in Sources */,
+				7CBB34E01F13A6D80041A320 /* LoginViewController.swift in Sources */,
 				7C94D43A1F0B1C0800C14DEE /* News.swift in Sources */,
 				7C7103771EC3D9DB0040CA28 /* SearchTableViewController.swift in Sources */,
 				7C9BD70D1EC13060003242CA /* TextField+helpers.swift in Sources */,
 				7CF906E11EAEB7AF00A9417E /* HomeNavigationController.swift in Sources */,
+				7CBB34DB1F13A6D80041A320 /* LoginConfigurator.swift in Sources */,
 				7C9BD70F1EC13D1D003242CA /* Protocols.swift in Sources */,
 				7C94D4381F0B165100C14DEE /* Request.swift in Sources */,
 				7C404D751EF838F000A56CDE /* RightToLeftAnimationTransition.swift in Sources */,
 				7C404D731EF830BA00A56CDE /* UIImage+helpers.swift in Sources */,
 				7CF906DD1EAE765B00A9417E /* GuideCell.swift in Sources */,
 				7C63481A1F0C273100435768 /* NewsDetailController.swift in Sources */,
-				7CF906CB1EAE6D3F00A9417E /* LoginController.swift in Sources */,
+				7CBB34DD1F13A6D80041A320 /* LoginModels.swift in Sources */,
 				7C6348161F0C20EB00435768 /* NewsController.swift in Sources */,
 				7C404D6F1EF82CE300A56CDE /* ProfileController.swift in Sources */,
 				4171BD971EB5A0F900C6C6DD /* Service.swift in Sources */,
@@ -649,6 +679,7 @@
 				7CC5096D1EC26DD7000E869C /* LostPersonCell.swift in Sources */,
 				7CF906E81EAED75600A9417E /* HomeController.swift in Sources */,
 				41D8CCBE1EFF299200DFFB63 /* RequestManager.swift in Sources */,
+				7CBB34DE1F13A6D80041A320 /* LoginPresenter.swift in Sources */,
 				7C0973A81EDC888600FACC60 /* DetailViewController.swift in Sources */,
 				7CF906DF1EAE94E300A9417E /* LoginCell.swift in Sources */,
 				7C404D711EF82D5600A56CDE /* ProfileDetailCell.swift in Sources */,
@@ -656,13 +687,16 @@
 				7C7103791EC3EACD0040CA28 /* FindPersonCell.swift in Sources */,
 				7CC5096B1EC26455000E869C /* HomeControllerCell.swift in Sources */,
 				7C0973AC1EDCC4BB00FACC60 /* ClueViewController.swift in Sources */,
+				7CBB34DA1F13A6D80041A320 /* CheckStateErrorWorker.swift in Sources */,
 				7C7103741EC3BEA50040CA28 /* OptionsStackView.swift in Sources */,
+				7CBB34DC1F13A6D80041A320 /* LoginInteractor.swift in Sources */,
 				7C71037B1EC4DCC40040CA28 /* BaseCells.swift in Sources */,
 				7CF906DB1EAE6EC600A9417E /* Page.swift in Sources */,
 				7C4193101EB29FA600FBC6AD /* User.swift in Sources */,
 				7C6348181F0C240300435768 /* NewsCell.swift in Sources */,
 				7C8D7F8B1EF30CF60061FFC0 /* ReportController.swift in Sources */,
 				7C8D7F891EF2F0460061FFC0 /* MapController.swift in Sources */,
+				7CBB34DF1F13A6D80041A320 /* LoginRouter.swift in Sources */,
 				7CF906C91EAE6D3F00A9417E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
