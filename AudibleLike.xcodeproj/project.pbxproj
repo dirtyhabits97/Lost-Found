@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0F766C3832272D87B0E7ED91 /* Pods_AudibleLike.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CA4F0E5FEFA7A99C52D5843 /* Pods_AudibleLike.framework */; };
+		411FCA951F13345100A0FDCA /* AudibleLikeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4AB6BC1EE60883001C8834 /* AudibleLikeTests.swift */; };
+		411FCA971F1335AE00A0FDCA /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 411FCA961F1335AE00A0FDCA /* SnapKit.framework */; };
 		4171BD971EB5A0F900C6C6DD /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4171BD961EB5A0F900C6C6DD /* Service.swift */; };
 		41D8CCBE1EFF299200DFFB63 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D8CCBD1EFF299200DFFB63 /* RequestManager.swift */; };
 		49361C79E1F1F205DAA92668 /* Pods_AudibleLikeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13D5DF496D7B09A3D102BFFE /* Pods_AudibleLikeTests.framework */; };
@@ -27,7 +29,6 @@
 		7C7103771EC3D9DB0040CA28 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7103761EC3D9DB0040CA28 /* SearchTableViewController.swift */; };
 		7C7103791EC3EACD0040CA28 /* FindPersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7103781EC3EACD0040CA28 /* FindPersonCell.swift */; };
 		7C71037B1EC4DCC40040CA28 /* BaseCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C71037A1EC4DCC40040CA28 /* BaseCells.swift */; };
-		7C7F93A41F01478400DFFEA5 /* UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7F93A31F01478400DFFEA5 /* UITests.swift */; };
 		7C8D7F851EF2E3680061FFC0 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8D7F841EF2E3680061FFC0 /* CustomImageView.swift */; };
 		7C8D7F891EF2F0460061FFC0 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8D7F881EF2F0460061FFC0 /* MapController.swift */; };
 		7C8D7F8B1EF30CF60061FFC0 /* ReportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8D7F8A1EF30CF60061FFC0 /* ReportController.swift */; };
@@ -70,6 +71,7 @@
 
 /* Begin PBXFileReference section */
 		13D5DF496D7B09A3D102BFFE /* Pods_AudibleLikeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AudibleLikeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		411FCA961F1335AE00A0FDCA /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = "../../Library/Developer/Xcode/DerivedData/AudibleLike-gqmccrmarlioiwezrzvenrkolzfi/Build/Products/Debug-iphonesimulator/SnapKit/SnapKit.framework"; sourceTree = "<group>"; };
 		4171BD961EB5A0F900C6C6DD /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Service.swift; path = Managers/WebService/Service.swift; sourceTree = "<group>"; };
 		41D8CCBD1EFF299200DFFB63 /* RequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestManager.swift; path = Managers/WebService/RequestManager.swift; sourceTree = "<group>"; };
 		5794132F3FAC93CDBE58619C /* Pods-AudibleLike.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudibleLike.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AudibleLike/Pods-AudibleLike.debug.xcconfig"; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				411FCA971F1335AE00A0FDCA /* SnapKit.framework in Frameworks */,
 				0F766C3832272D87B0E7ED91 /* Pods_AudibleLike.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -175,6 +178,7 @@
 		6124F0F8307D55BB1C703F15 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				411FCA961F1335AE00A0FDCA /* SnapKit.framework */,
 				7C8198841ED7401C00F32812 /* MyExtensions.framework */,
 				8CA4F0E5FEFA7A99C52D5843 /* Pods_AudibleLike.framework */,
 				13D5DF496D7B09A3D102BFFE /* Pods_AudibleLikeTests.framework */,
@@ -610,6 +614,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				411FCA951F13345100A0FDCA /* AudibleLikeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -617,7 +622,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C7F93A41F01478400DFFEA5 /* UITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -181,8 +181,9 @@ struct Service {
             
             guard let data = data else { return }
             let dataDictionary = try? JSONSerialization.jsonObject(with: data, options: [])
-            guard let dictionary = dataDictionary as? [[String: Any]] else { return }
-            let news = dictionary.map { News(dictionary: $0) }
+            guard let dictionary = dataDictionary as? [String: Any] else { return }
+            guard let newsFeed = dictionary["News"] as? [[String: Any]] else { return }
+            let news = newsFeed.map { News(dictionary: $0) }
             DispatchQueue.main.async {
                 completion(State.success(news))
             }

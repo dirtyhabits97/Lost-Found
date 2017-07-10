@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		03A31624EAE49027549C0AA2EA91665B /* ConstraintOffsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EF9279D230438E1DF533F8BCBEC262 /* ConstraintOffsetTarget.swift */; };
+		150F046364B7E70087EDD1BCE8272340 /* Pods-AudibleLikeTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E52B427A93E1E89EA80C86958631D9 /* Pods-AudibleLikeTests-dummy.m */; };
 		156308402680F53DB7B4315E85DFA500 /* ConstraintMultiplierTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D41E08E365B8155DF32EB5D064DEBD /* ConstraintMultiplierTarget.swift */; };
 		2B99E7585B98C0B9BFCD15AA8387E970 /* ConstraintMakerEditable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD7D51E12631CD67464E874DF8B217B /* ConstraintMakerEditable.swift */; };
 		30BA63CED0E6DA1E39676328E9AB80AC /* ConstraintConstantTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE9A2B12FAD5179289BD79BAC77D995 /* ConstraintConstantTarget.swift */; };
 		341665D8D47C3CE0324681D69D2868DC /* ConstraintMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC30665F5851A91F53B06C1C5DB086F /* ConstraintMaker.swift */; };
-		38868BEEE8D95BFEA035B898DD99B140 /* Pods-AudibleLikeTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 42A05FC7C8A150B748AB38E4093CC3BD /* Pods-AudibleLikeTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		39125DD2BEF3CFCF5A70C3D2A4FE3AC3 /* Debugging.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8312E198200C0AEA234E70043168A5 /* Debugging.swift */; };
 		392976546485687070D463F234E23F4D /* LayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8146EFFBA522D816BA04C83EB0DF7B /* LayoutConstraint.swift */; };
 		4103B24464E8BC6351144ADD778DFE72 /* ConstraintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB07029E1AB6B48844606B94F63C7D3 /* ConstraintView.swift */; };
@@ -30,7 +30,6 @@
 		8187300DBD70CD73D8C1744C09C70DA9 /* ConstraintViewDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE22B2BDC310B15F7DDC06B930A34C08 /* ConstraintViewDSL.swift */; };
 		8DD2F5E41CEAF4AA09FFB1144D168614 /* ConstraintDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEFE805792598886FC384C0B0A3EF38 /* ConstraintDSL.swift */; };
 		9984156C538BE1B9CA72F1D75C09AECF /* ConstraintPriorityTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C2911388ED349020316062C27A0552 /* ConstraintPriorityTarget.swift */; };
-		9C5548E94CF09EEC694B9F6DF6FB48FE /* Pods-AudibleLikeTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E52B427A93E1E89EA80C86958631D9 /* Pods-AudibleLikeTests-dummy.m */; };
 		9DF051EC6F9739594D680DE916612518 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEC92430472C5AD046E7F861C0EA03C /* Constraint.swift */; };
 		A3213BC019C5DA5C45C5831CD7E49CC1 /* ConstraintInsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FC83115BE318FE6323B0F9EFF8AD4E /* ConstraintInsetTarget.swift */; };
 		A73AE42AF043650E7A9CB76CD4127DC0 /* ConstraintMakerExtendable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593ADC9CCA6A730223A7A1761308569E /* ConstraintMakerExtendable.swift */; };
@@ -39,13 +38,14 @@
 		B5A39787B79CA002BC17B7A9B64C37B6 /* Pods-AudibleLike-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8801EE36BDC0CD291D5AE8557537C93B /* Pods-AudibleLike-dummy.m */; };
 		BC04113E04FB427C0B2231C8053D5C30 /* ConstraintInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B293100C0290E65E0BC870B684749EE /* ConstraintInsets.swift */; };
 		C0B8A3DCF5D63E82D9674AC290879829 /* ConstraintLayoutSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A462519E1C4775536E35556F3795C991 /* ConstraintLayoutSupport.swift */; };
-		C3BC99353B57A99BB48B0AAD95AD9B07 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		C408E7054B8D2A4E55A2F119FE641C18 /* ConstraintLayoutGuideDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1CD2DEFFFFBE20323DBA9A34D77244 /* ConstraintLayoutGuideDSL.swift */; };
 		CDC039A65036D6D8EA1E0A41705A84B7 /* ConstraintPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D51CAB784598D20B25F8D8697936547 /* ConstraintPriority.swift */; };
 		CF4B512116661BC5799CAC34CB07592A /* ConstraintView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542616B9ACD95DF820563AF6812054DB /* ConstraintView+Extensions.swift */; };
 		D8F7F2D639254788CE506DE31FA3040D /* ConstraintAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646B1C84CB8B9ED6A88495862C479990 /* ConstraintAttributes.swift */; };
+		DDC145911C44EC00C091B19B6459385A /* Pods-AudibleLikeTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 42A05FC7C8A150B748AB38E4093CC3BD /* Pods-AudibleLikeTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E16119C730017EC4B59690E5561715AE /* SnapKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 29DA246624787CFC6FA77FF2F1B30237 /* SnapKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E3B30D4E321A8674315D8349D62D22AB /* ConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DECDB5C71A137EEEA16CEB2DD800330 /* ConstraintItem.swift */; };
+		E7FB41D23497DB3A89208ADA63F8E8C1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		EF45B4F3CD8FAB81D2B740E4D0C87314 /* ConstraintMakerPriortizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869EE947ABEB849C41E6E2759CB73461 /* ConstraintMakerPriortizable.swift */; };
 		F35564885BCDFBC9E6E9A22CFF07EFCC /* ConstraintDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC80D101E67AAC55EB7A7DA474138F29 /* ConstraintDescription.swift */; };
 		FAC4960B8B866FE8D94C39B2CD423D71 /* UILayoutSupport+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF82A6ACAA600E4D7DB0ED2CD8810552 /* UILayoutSupport+Extensions.swift */; };
@@ -53,6 +53,13 @@
 
 /* Begin PBXContainerItemProxy section */
 		6E961726AE9C16F69220346622AAE259 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3BA99D13A3D34B8B8229465D47A37440;
+			remoteInfo = SnapKit;
+		};
+		768ED2D2ECBCE6059E994B678A6AB17C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
@@ -137,11 +144,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		73E8590DFEEB6C86209E6C3D1EA161FD /* Frameworks */ = {
+		D19B858489FF1E3856531C32F0414E4D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C3BC99353B57A99BB48B0AAD95AD9B07 /* Foundation.framework in Frameworks */,
+				E7FB41D23497DB3A89208ADA63F8E8C1 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,11 +320,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A685A9ACC1D6799033C1534F27AF0432 /* Headers */ = {
+		B48D236FC034D8506402342CF514675A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38868BEEE8D95BFEA035B898DD99B140 /* Pods-AudibleLikeTests-umbrella.h in Headers */,
+				DDC145911C44EC00C091B19B6459385A /* Pods-AudibleLikeTests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,17 +374,18 @@
 			productReference = B9086C89C7FE88D479814BED291669D2 /* Pods_AudibleLike.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		FF15F565C7703EE0375153400C7B38D5 /* Pods-AudibleLikeTests */ = {
+		4F438A8109FD8A8D6ECA19D491AEC50D /* Pods-AudibleLikeTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2A8F21233D9DDC0DCC307642D7229763 /* Build configuration list for PBXNativeTarget "Pods-AudibleLikeTests" */;
+			buildConfigurationList = 809EF3BDE3EAE3F9726D2261D28F67FC /* Build configuration list for PBXNativeTarget "Pods-AudibleLikeTests" */;
 			buildPhases = (
-				27A305864686A4200C662ED2C4D64885 /* Sources */,
-				73E8590DFEEB6C86209E6C3D1EA161FD /* Frameworks */,
-				A685A9ACC1D6799033C1534F27AF0432 /* Headers */,
+				18D6C0C9C51FE41F608655789D9353A1 /* Sources */,
+				D19B858489FF1E3856531C32F0414E4D /* Frameworks */,
+				B48D236FC034D8506402342CF514675A /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				FB8938BBB196517794EFE59630B36F14 /* PBXTargetDependency */,
 			);
 			name = "Pods-AudibleLikeTests";
 			productName = "Pods-AudibleLikeTests";
@@ -406,18 +414,18 @@
 			projectRoot = "";
 			targets = (
 				3CEFB4D347C986C7C5F2AEEED89B9C75 /* Pods-AudibleLike */,
-				FF15F565C7703EE0375153400C7B38D5 /* Pods-AudibleLikeTests */,
+				4F438A8109FD8A8D6ECA19D491AEC50D /* Pods-AudibleLikeTests */,
 				3BA99D13A3D34B8B8229465D47A37440 /* SnapKit */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		27A305864686A4200C662ED2C4D64885 /* Sources */ = {
+		18D6C0C9C51FE41F608655789D9353A1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C5548E94CF09EEC694B9F6DF6FB48FE /* Pods-AudibleLikeTests-dummy.m in Sources */,
+				150F046364B7E70087EDD1BCE8272340 /* Pods-AudibleLikeTests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,81 +487,15 @@
 			target = 3BA99D13A3D34B8B8229465D47A37440 /* SnapKit */;
 			targetProxy = 6E961726AE9C16F69220346622AAE259 /* PBXContainerItemProxy */;
 		};
+		FB8938BBB196517794EFE59630B36F14 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SnapKit;
+			target = 3BA99D13A3D34B8B8229465D47A37440 /* SnapKit */;
+			targetProxy = 768ED2D2ECBCE6059E994B678A6AB17C /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		17880EDA193C94D53B301A796A584F9F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E3E80E48C336B33440D7E2C087161575 /* Pods-AudibleLikeTests.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-AudibleLikeTests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-AudibleLikeTests/Pods-AudibleLikeTests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_AudibleLikeTests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		5E759D282F5AF5040FBF0408E244D6CC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = EA250EDFE2F34FF948AC8FD303CA2D48 /* Pods-AudibleLikeTests.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-AudibleLikeTests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-AudibleLikeTests/Pods-AudibleLikeTests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_AudibleLikeTests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		643C76AA582046977B7877822ED7A258 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -630,6 +572,83 @@
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = Pods_AudibleLike;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		AAE001B1DA6E39178174E25CE798B66C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA250EDFE2F34FF948AC8FD303CA2D48 /* Pods-AudibleLikeTests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-AudibleLikeTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-AudibleLikeTests/Pods-AudibleLikeTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_AudibleLikeTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		BD74398688907FB7BCD8DE63C418BE14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E3E80E48C336B33440D7E2C087161575 /* Pods-AudibleLikeTests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-AudibleLikeTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-AudibleLikeTests/Pods-AudibleLikeTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_AudibleLikeTests;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -795,15 +814,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2A8F21233D9DDC0DCC307642D7229763 /* Build configuration list for PBXNativeTarget "Pods-AudibleLikeTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5E759D282F5AF5040FBF0408E244D6CC /* Debug */,
-				17880EDA193C94D53B301A796A584F9F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -818,6 +828,15 @@
 			buildConfigurations = (
 				CE30C1BECB6FB461227A7331BFF0DF70 /* Debug */,
 				A21645D447CD05503A44F534072AD657 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		809EF3BDE3EAE3F9726D2261D28F67FC /* Build configuration list for PBXNativeTarget "Pods-AudibleLikeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AAE001B1DA6E39178174E25CE798B66C /* Debug */,
+				BD74398688907FB7BCD8DE63C418BE14 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

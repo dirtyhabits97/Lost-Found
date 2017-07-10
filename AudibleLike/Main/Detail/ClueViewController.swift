@@ -25,6 +25,8 @@ class ClueViewController: UIViewController, UITextViewDelegate, UITextFieldDeleg
     lazy var subjectTextField: UITextField = {
         let textfield = UITextField()
         textfield.delegate = self
+        textfield.autocorrectionType = .no
+        textfield.spellCheckingType = .no
         textfield.placeholder = "Asunto"
         textfield.font = .systemFont(ofSize: 18)
         return textfield
@@ -32,6 +34,8 @@ class ClueViewController: UIViewController, UITextViewDelegate, UITextFieldDeleg
     
     lazy var clueTextView: UITextView = {
         let tv = UITextView()
+        tv.autocorrectionType = .no
+        tv.spellCheckingType = .no
         tv.delegate = self
         tv.autocorrectionType = .no
         tv.spellCheckingType = .no
